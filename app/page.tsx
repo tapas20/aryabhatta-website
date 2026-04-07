@@ -6,31 +6,30 @@ import Services from "./components/Services";
 import SplashScreen from "./components/SplashScreen";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Reviwes from "./components/Reviwes";
-// import { DragCards } from "./components/Dragcard";
 import HomeCta from "./components/HomeCta";
 import Businesshours from "./components/Businesshours";
 import Award from "./components/Award";
 
 export const metadata: Metadata = {
   title:
-    "Al Syed Group | Best Construction & Demolition Company in Saudi Arabia",
+    "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
   description:
-    "Al Syed Group is the leading construction and demolition company in Saudi Arabia. Best demolition work, general construction, heavy equipment rental, rigging, logistics, and engineering services in Dammam, Riyadh, Jeddah, and across KSA. Contact us today.",
+    "BrightMind Academy is a premier coaching center for classes 6-12. Expert faculty, proven results, personalized learning for CBSE & CHSE boards. JEE & NEET foundation coaching available. Enroll today!",
   alternates: {
-    canonical: "https://www.alsyedgroup.net",
+    canonical: "https://www.brightmindacademy.in",
   },
   openGraph: {
     title:
-      "Al Syed Group | Best Construction & Demolition Company in Saudi Arabia",
+      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
-      "Leading construction, demolition, and engineering services company in Saudi Arabia. Trusted by major clients across Dammam, Riyadh, Jeddah, and all KSA.",
-    url: "https://www.alsyedgroup.net",
+      "Premier coaching center with expert faculty, 95%+ distinction rate, and personalized attention for CBSE & CHSE students.",
+    url: "https://www.brightmindacademy.in",
     images: [
       {
-        url: "/assets/alsyed-logo.png",
+        url: "/assets/logo.png",
         width: 1200,
         height: 630,
-        alt: "Al Syed Group - Best Construction Company in Saudi Arabia",
+        alt: "BrightMind Academy - Best Coaching Center",
       },
     ],
   },
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="text-red-700 scroll-smooth">
+    <div className="scroll-smooth">
       <SplashScreen />
       <Hero />
       <Recognition />
@@ -46,7 +45,6 @@ export default function Home() {
       <Experience />
       <WhyChooseUs />
       <Reviwes />
-      {/* <DragCards /> */}
       <Award />
       <Businesshours />
       <HomeCta />

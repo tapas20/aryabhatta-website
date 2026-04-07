@@ -1,100 +1,54 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import Rigmove from "../../public/assets/Rigmove.jpg";
-import HeavyLifting from "../../public/assets/HeavyLifting.jpg";
-import Construction from "../../public/assets/Constructionhero.jpg";
-import Manpower from "../../public/assets/Manpowerhero.jpg";
-import Transportation from "../../public/assets/Transportation.jpg";
-import HeavyEq from "../../public/assets/HeavyMechine.jpg";
-import Demolition from "../../public/assets/Demolition.jpg";
-import ROPlantMaintenance from "../../public/assets/RoPlant.png";
+import Link from "next/link";
+import { GraduationCap, BookOpen, Trophy, Users, ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    img: Demolition,
-    title: "Demolition Works",
+    title: "Excel in Board Exams",
     subtitle:
-      "Safe, controlled demolition services using engineered methods to dismantle structures with precision while minimizing operational risks.",
-    direction: "left",
+      "Expert coaching for CBSE & CHSE classes 6-12. Build strong foundations and score top marks with our proven teaching methodology.",
+    icon: <GraduationCap className="w-16 h-16" />,
+    gradient: "from-indigo-600 via-violet-600 to-purple-700",
   },
   {
-    img: HeavyLifting,
-    title: "Heavy Lifting",
+    title: "Learn from the Best Faculty",
     subtitle:
-      "Advanced heavy-duty lifting solutions using certified operators and state-of-the-art equipment to handle critical loads with maximum safety.",
-    direction: "left",
+      "Experienced and passionate teachers who simplify complex concepts and make learning engaging for every student.",
+    icon: <BookOpen className="w-16 h-16" />,
+    gradient: "from-blue-600 via-indigo-600 to-violet-700",
   },
   {
-    img: Transportation,
-    title: "Transportation",
+    title: "Proven Track Record",
     subtitle:
-      "Comprehensive industrial logistics ensuring safe, timely, and controlled movement of oversized, sensitive, and high-value equipment.",
-    direction: "right",
+      "Consistently producing top rankers in CBSE & CHSE board exams. 95%+ students score distinction every year.",
+    icon: <Trophy className="w-16 h-16" />,
+    gradient: "from-violet-600 via-purple-600 to-fuchsia-700",
   },
   {
-    img: Rigmove,
-    title: "Rig Move Support Services",
+    title: "Personalized Attention",
     subtitle:
-      "End-to-end rig relocation engineered with precision, safety compliance, and seamless multi-phase coordination for complex operations.",
-    direction: "right",
-  },
-  {
-    img: Construction,
-    title: "Construction Division",
-    subtitle:
-      "End-to-end civil and industrial construction services delivering quality workmanship, structural integrity, and timely project execution.",
-    direction: "right",
-  },
-  {
-    img: HeavyEq,
-    title: "Heavy Equipment Rentals",
-    subtitle:
-      "Reliable, high-performance machinery available on demand to support every scale of industrial, construction, and infrastructure project.",
-    direction: "left",
-  },
-  {
-    img: Manpower,
-    title: "Manpower Rental",
-    subtitle:
-      "Skilled, experienced, and safety-trained personnel deployed for demanding industrial operations, ensuring efficiency and reliability.",
-    direction: "left",
-  },
-
-  {
-    img: ROPlantMaintenance,
-    title: "RO Plant Maintenance",
-    subtitle:
-      "Complete RO system maintenance ensuring optimal performance, reduced downtime, and uninterrupted industrial water purification operations.",
-    direction: "right",
+      "Small batch sizes ensure every student gets individual attention, regular assessments, and one-on-one doubt clearing sessions.",
+    icon: <Users className="w-16 h-16" />,
+    gradient: "from-indigo-700 via-blue-600 to-cyan-600",
   },
 ];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile screen
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // Auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* IMAGE SLIDER */}
+      {/* GRADIENT BACKGROUNDS */}
       <AnimatePresence>
         {slides.map((slide, i) =>
           i === index ? (
@@ -104,66 +58,100 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2 }}
-              className="absolute inset-0"
+              className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`}
             >
-              {/* ==== CONDITIONAL SLIDING ==== */}
-              <motion.div
-                initial={
-                  isMobile
-                    ? { scale: 1, x: 0 } // mobile → no sliding
-                    : {
-                        scale: 1.08,
-                        x: slide.direction === "left" ? 50 : -50,
-                      }
-                }
-                animate={isMobile ? { scale: 1, x: 0 } : { scale: 1, x: 0 }}
-                transition={{
-                  duration: isMobile ? 0 : 4,
-                  ease: "easeOut",
-                }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={slide.img}
-                  alt="Hero Background"
-                  fill
-                  className="object-cover"
-                  priority
+              {/* Decorative elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full" />
+
+                {/* Grid pattern */}
+                <div
+                  className="absolute inset-0 opacity-[0.06]"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                  }}
                 />
-              </motion.div>
+              </div>
             </motion.div>
-          ) : null,
+          ) : null
         )}
       </AnimatePresence>
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/40" />
-
       {/* TEXT CONTENT */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-10 sm:left-20 text-white z-20 max-w-2xl">
-        {/* TITLE */}
-        <motion.h1
-          key={slides[index].title}
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="text-4xl sm:text-6xl font-extrabold tracking-wide leading-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]"
-        >
-          <span className="bg-white bg-clip-text text-transparent">
-            {slides[index].title}
-          </span>
-        </motion.h1>
+      <div className="absolute inset-0 flex items-center z-20">
+        <div className="max-w-[1800px] mx-auto w-full px-6 sm:px-10 lg:px-16">
+          <div className="max-w-3xl">
+            {/* Badge */}
+            <motion.div
+              key={`badge-${index}`}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20"
+            >
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+              <span className="text-white/90 text-sm font-medium">Admissions Open for 2025-26</span>
+            </motion.div>
 
-        {/* SUBTITLE */}
-        <motion.p
-          key={slides[index].subtitle}
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-lg sm:text-2xl font-light opacity-95 tracking-wide leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.7)]"
-        >
-          {slides[index].subtitle}
-        </motion.p>
+            {/* Icon */}
+            <motion.div
+              key={`icon-${index}`}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-white/20 mb-4"
+            >
+              {slides[index].icon}
+            </motion.div>
+
+            {/* TITLE */}
+            <motion.h1
+              key={slides[index].title}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white"
+            >
+              {slides[index].title}
+            </motion.h1>
+
+            {/* SUBTITLE */}
+            <motion.p
+              key={slides[index].subtitle}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-lg sm:text-xl font-medium text-white/80 mt-6 max-w-2xl leading-relaxed"
+            >
+              {slides[index].subtitle}
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              key={`cta-${index}`}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 mt-10"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all shadow-xl shadow-black/10 text-base"
+              >
+                Enroll Now
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/courses"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-xl border border-white/20 hover:bg-white/20 transition-all text-base"
+              >
+                Explore Courses
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* INDICATORS */}
@@ -173,8 +161,8 @@ const Hero = () => {
             key={i}
             onClick={() => setIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-[3px] w-6 rounded-full transition-all duration-500 hover:bg-white/80 ${
-              i === index ? "bg-white" : "bg-white/40"
+            className={`h-1 rounded-full transition-all duration-500 hover:bg-white/80 ${
+              i === index ? "bg-white w-10" : "bg-white/40 w-6"
             }`}
           />
         ))}

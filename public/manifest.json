@@ -1,19 +1,19 @@
 {
-  "name": "Al Syed Group - Construction & Engineering Services",
-  "short_name": "Al Syed Group",
-  "description": "Leading construction, demolition, and engineering services company in Saudi Arabia",
+  "name": "BrightMind Academy - CBSE & CHSE Coaching Center",
+  "short_name": "BrightMind Academy",
+  "description": "Premier coaching center for classes 6-12. Expert CBSE & CHSE coaching with proven results.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#4F46E5",
   "icons": [
     {
-      "src": "/assets/alsyed-logo.png",
+      "src": "/assets/logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/alsyed-logo.png",
+      "src": "/assets/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

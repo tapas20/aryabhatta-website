@@ -1,183 +1,168 @@
 import React from "react";
-import Image from "next/image";
-import { Facebook, Linkedin, Instagram, MessageCircle } from "lucide-react";
+import { Facebook, Linkedin, Instagram, MessageCircle, Youtube, GraduationCap, MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#a9a9a9] text-white py-12 px-8">
+    <footer className="w-full bg-slate-900 text-white py-16 px-8">
       <div className="max-w-[1700px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Left Section - Logo & Social */}
-          <div className="space-y-6">
-            <div>
-              <Image
-                src="/assets/alsyed-logo.png"
-                alt="Al Syed Group - Construction & Engineering Company in Saudi Arabia"
-                width={80}
-                height={80}
-                className="h-25 w-25 object-contain"
-              />
-            </div>
-
-            {/* Address Section */}
-            <div className="space-y-2">
-              <p className="font-bold text-black text-lg tracking-wide">
-                COMPANY ADDRESS
-              </p>
-              <div className="text-black/90 text-sm leading-relaxed">
-                <p>Adh Dhahran Al Jubail Highway</p>
-                <p>Dammam 31972, Kingdom of Saudi Arabia</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
+          {/* Brand & Description */}
+          <div className="space-y-6 lg:col-span-1">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <GraduationCap className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <p className="text-lg font-extrabold tracking-tight leading-none">BrightMind</p>
+                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/50 leading-none">Academy</p>
               </div>
             </div>
 
-            <p className="text-black/90 leading-relaxed max-w-md">
-              We take pride in being a trusted partner for businesses across
-              Saudi Arabia, delivering excellence, reliability, and value-driven
-              solutions in every project we undertake.
+            <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
+              Premier coaching center for classes 6-12, providing expert coaching
+              for CBSE and CHSE boards. We shape future toppers with personalized
+              learning and proven results.
             </p>
 
-            <div className="pt-4">
-              <p className="text-sm text-black font-semibold mb-3 tracking-wide">
-                FOLLOW US
+            <div className="pt-2">
+              <p className="text-xs text-slate-500 font-semibold mb-3 tracking-wider uppercase">
+                Follow Us
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-2">
                 <a
-                  href="https://www.instagram.com/alsyedgroup.ksa/?igsh=MTBnM3I3MGliZHRpcw%3D%3D&utm_source=qr#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow Al Syed Group on Instagram"
-                  className="w-10 h-10 text-black bg-white/20 rounded-lg flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110"
+                  href="#"
+                  aria-label="Instagram"
+                  className="w-9 h-9 text-slate-400 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                 >
-                  <Instagram size={20} />
+                  <Instagram size={18} />
                 </a>
                 <a
-                  href="https://www.facebook.com/profile.php?id=61583824135180&mibextid=wwXIfr&rdid=YZYjlH4t4fwf30K9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F163Hib3bcq%2F%3Fmibextid%3DwwXIfr#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow Al Syed Group on Facebook"
-                  className="w-10 h-10 text-black bg-white/20 rounded-lg flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110"
+                  href="#"
+                  aria-label="Facebook"
+                  className="w-9 h-9 text-slate-400 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                 >
-                  <Facebook size={20} />
+                  <Facebook size={18} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/alsyedgroup/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow Al Syed Group on LinkedIn"
-                  className="w-10 h-10 text-black bg-white/20 rounded-lg flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110"
+                  href="#"
+                  aria-label="YouTube"
+                  className="w-9 h-9 text-slate-400 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                 >
-                  <Linkedin size={20} />
+                  <Youtube size={18} />
                 </a>
                 <a
-                  href="https://wa.me/8105590926"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contact Al Syed Group on WhatsApp"
-                  className="w-10 h-10 text-black bg-white/20 rounded-lg flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110"
+                  href="#"
+                  aria-label="LinkedIn"
+                  className="w-9 h-9 text-slate-400 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                 >
-                  <MessageCircle size={20} />
+                  <Linkedin size={18} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="WhatsApp"
+                  className="w-9 h-9 text-slate-400 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
+                >
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Section - Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mt-31">
-            <div>
-              <h3 className="font-bold text-black text-lg mb-5 tracking-wide">
-                PAGES
-              </h3>
-              <ul className="space-y-3">
-                <li>
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-bold text-white text-sm mb-5 tracking-wider uppercase">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Courses", href: "/courses" },
+                { label: "Results", href: "/results" },
+                { label: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.href}>
                   <Link
-                    href="/about"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
+                    href={link.href}
+                    className="text-slate-400 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 text-sm"
                   >
-                    About
+                    {link.label}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/expertise"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Expertise
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/demolition"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Demolition
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/construction"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Construction
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </div>
 
-            <div>
-              <h3 className="font-bold text-black text-lg mb-5 tracking-wide">
-                CONTACT
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="mailto: info@alsyedgroup.net"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
+          {/* Programs */}
+          <div>
+            <h3 className="font-bold text-white text-sm mb-5 tracking-wider uppercase">
+              Programs
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "CBSE Classes 6-10",
+                "CBSE Classes 11-12 Science",
+                "CBSE Classes 11-12 Commerce",
+                "CHSE Classes 11-12",
+                "JEE & NEET Foundation",
+                "Doubt Clearing Sessions",
+              ].map((prog) => (
+                <li key={prog}>
+                  <Link
+                    href="/courses"
+                    className="text-slate-400 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 text-sm"
                   >
-                    info@alsyedgroup.net
-                  </a>
+                    {prog}
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="tel:0567220786"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    0567220786
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="tel:0536649777"
-                    className="text-black/90 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    0536649777
-                  </a>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-bold text-white text-sm mb-5 tracking-wider uppercase">
+              Contact Us
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-slate-400 text-sm">
+                  123 Education Lane, Near City Center,
+                  <br />
+                  Bhubaneswar, Odisha - 751001
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <a
+                  href="tel:+919876543210"
+                  className="text-slate-400 hover:text-primary transition-colors text-sm"
+                >
+                  +91 98765 43210
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <a
+                  href="mailto:info@brightmindacademy.in"
+                  className="text-slate-400 hover:text-primary transition-colors text-sm"
+                >
+                  info@brightmindacademy.in
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="border-t border-black/20 mt-8 pt-6 text-center">
-          <p className="text-sm text-black/80">
-            © {new Date().getFullYear()} Al Syed. All rights reserved.
+        {/* Bottom */}
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-slate-500">
+            &copy; {new Date().getFullYear()} BrightMind Academy. All rights reserved.
+          </p>
+          <p className="text-xs text-slate-600">
+            CBSE & CHSE Affiliated Coaching Center
           </p>
         </div>
       </div>

@@ -2,76 +2,71 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
-// ✅ Updated Testimonials (more Saudi + some Indian managers) — demo/sample placeholders
 export const testimonials = [
-  // 🇸🇦 Saudi (majority)
   {
-    name: "Faisal Al-Harbi",
-    role: "Project Manager",
-    text: "Al Syed handled a complex demolition scope with strict safety controls and clean execution. Site clearance and debris removal were organized, and the handover area was ready for the next phase without delays.",
+    name: "Priya Mohanty",
+    role: "Class 12 CBSE — 96.4%",
+    text: "BrightMind Academy transformed my approach to studies. The faculty made Physics and Chemistry so easy to understand. I scored 96.4% in boards and got into my dream college!",
+    rating: 5,
   },
   {
-    name: "Abdulrahman Al-Qahtani",
-    role: "Facilities Manager",
-    text: "Their demolition division delivered controlled dismantling in an active industrial environment. Compliance, barricading, and coordination were excellent, and the site was prepared for future construction as promised.",
+    name: "Arjun Das",
+    role: "Class 10 CBSE — 95.2%",
+    text: "The regular tests and doubt clearing sessions helped me score 95.2% in my board exams. The teachers here truly care about each student's progress.",
+    rating: 5,
   },
   {
-    name: "Mohammed Al-Faraj",
-    role: "Construction Manager",
-    text: "We used Al Syed for demolition and enabling works. They mobilized quickly, minimized disruption, and maintained a disciplined safety approach throughout the job.",
+    name: "Sneha Patel",
+    role: "Class 12 CHSE Science — 92%",
+    text: "I joined BrightMind in Class 11 and it was the best decision. The study material and practice papers were excellent. Scored 92% in CHSE boards!",
+    rating: 5,
   },
   {
-    name: "Khalid Al-Shehri",
-    role: "Operations Lead, Petro & Utilities Projects",
-    text: "Selective dismantling was executed precisely with good planning and clear daily reporting. Debris removal and site cleanup were completed on schedule, which helped us start the rebuild immediately.",
+    name: "Rahul Sharma",
+    role: "Parent of Class 9 Student",
+    text: "My son's performance improved dramatically after joining BrightMind. The regular parent-teacher meetings keep us informed about his progress. Highly recommended!",
+    rating: 5,
   },
   {
-    name: "Saeed Al-Dosari",
-    role: "HSE Manager",
-    text: "Safety standards were consistently followed across demolition activities. Their team maintained strong site controls, safe equipment handling, and disciplined work permits.",
+    name: "Ananya Mishra",
+    role: "Class 12 CBSE Commerce — 94.8%",
+    text: "The Accounts and Economics teachers are amazing! They made every concept crystal clear. The mock exams prepared me perfectly for the actual boards.",
+    rating: 5,
   },
   {
-    name: "Yousef Al-Mutairi",
-    role: "Project Controls Manager",
-    text: "Budget and timeline control were strong. The demolition scope, clearance, and handover documentation were all handled professionally with no surprises.",
+    name: "Vikram Nayak",
+    role: "JEE Main Qualified",
+    text: "BrightMind's integrated JEE coaching along with board preparation helped me crack JEE Main while scoring 93% in boards. The problem-solving approach is top-notch.",
+    rating: 5,
   },
   {
-    name: "Ahmed Al-Zahrani",
-    role: "Mechanical Projects Supervisor",
-    text: "We engaged them for demolition support and mechanical enabling works. The coordination between crews and equipment was smooth and the work quality stayed consistent.",
+    name: "Deepa Rout",
+    role: "Parent of Class 12 Student",
+    text: "Both my children studied at BrightMind. The faculty's dedication and the structured learning approach consistently deliver excellent results. Worth every penny!",
+    rating: 5,
   },
   {
-    name: "Nasser Al-Shammari",
-    role: "Site Manager, Eastern Province Works",
-    text: "From mobilization to final cleanup, the demolition team performed with speed and professionalism. The site was left ready for construction works as planned.",
-  },
-
-  // 🇮🇳 Indian managers
-  {
-    name: "Rakesh Sharma",
-    role: "Project Manager, IndoGulf Contracting",
-    text: "Al Syed’s demolition crew executed safe removal and full site clearance with great coordination. Their equipment availability and manpower support made planning easy for our team.",
+    name: "Siddharth Behera",
+    role: "Class 12 CHSE — 91.5%",
+    text: "The weekly tests were tough but they prepared me so well for the board exams. The doubt clearing sessions after class were incredibly helpful.",
+    rating: 5,
   },
   {
-    name: "Sandeep Nair",
-    role: "Operations Manager",
-    text: "Demolition + debris removal was handled efficiently, and the team kept the workfront clean and organized. Their safety practices were consistent across shifts.",
+    name: "Kavya Tripathy",
+    role: "NEET Qualified",
+    text: "The Biology faculty at BrightMind is exceptional. Their NEET-integrated approach helped me qualify for NEET while also scoring 95% in my CBSE boards.",
+    rating: 5,
   },
   {
-    name: "Amit Verma",
-    role: "Planning Engineer, Infrastructure Projects",
-    text: "What stood out was reliable scheduling and fast turnaround on demolition and enabling works. The site was prepared for the next contractor without rework.",
-  },
-  {
-    name: "Prakash Iyer",
-    role: "Facility Manager, Manufacturing & Utilities",
-    text: "They supported our plant area modifications with controlled dismantling and cleanup. Clear communication, good supervision, and on-time delivery.",
+    name: "Rajan Mohanty",
+    role: "Parent of Class 8 Student",
+    text: "My daughter used to struggle with Maths. After just 3 months at BrightMind, she's now topping her class. The personalized attention makes all the difference.",
+    rating: 5,
   },
 ];
 
-
-// Duplicate for infinite scroll effect
 const longList = [
   ...testimonials,
   ...testimonials,
@@ -91,7 +86,6 @@ export default function TestimonialCarousel() {
   ) => {
     if (!ref.current) return;
     ref.current.scrollLeft += speed;
-
     if (
       ref.current.scrollLeft >=
       ref.current.scrollWidth - ref.current.clientWidth - 5
@@ -106,7 +100,6 @@ export default function TestimonialCarousel() {
   ) => {
     if (!ref.current) return;
     ref.current.scrollLeft -= speed;
-
     if (ref.current.scrollLeft <= 0) {
       ref.current.scrollLeft =
         ref.current.scrollWidth - ref.current.clientWidth - 5;
@@ -120,17 +113,31 @@ export default function TestimonialCarousel() {
         moveBackward(row2Ref, 1.4);
       }
     }, 16);
-
     return () => clearInterval(interval);
   }, [paused]);
 
   return (
-    <div className="relative w-full bg-white py-14 text-black select-none">
-      <h2 className="text-center text-4xl font-semibold mb-10 text-gray-800">
-        TRUSTED BY INDUSTRY LEADERS
-      </h2>
+    <div className="relative w-full bg-slate-50 py-20 text-slate-900 select-none overflow-hidden">
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-100/50 rounded-full blur-3xl" />
+      </div>
 
-      {/* ROW 1 — Left → Right */}
+      <div className="text-center mb-12 px-4">
+        <div className="inline-flex items-center gap-3 mb-4">
+          <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary">
+            Testimonials
+          </p>
+          <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+          What Our Students &amp; Parents Say
+        </h2>
+      </div>
+
+      {/* ROW 1 */}
       <div
         ref={row1Ref}
         className="flex gap-6 px-10 py-2 overflow-hidden"
@@ -140,72 +147,58 @@ export default function TestimonialCarousel() {
         {longList.map((t, i) => (
           <motion.div
             key={`r1-${i}`}
-            className="min-w-[380px] max-w-[380px] bg-primary/10 rounded-xl p-6 border border-gray-300 shadow-lg"
+            className="min-w-[380px] max-w-[380px] bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <div className="flex items-start mb-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
+            <div className="flex gap-1 mb-4">
+              {Array.from({ length: t.rating }).map((_, idx) => (
+                <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">{t.text}</p>
+            <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm">
+                {t.name.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-primary text-sm">{t.role}</p>
+                <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                <p className="text-primary text-xs font-medium">{t.role}</p>
               </div>
             </div>
-            <p className="text-gray-700 text-sm leading-relaxed">{t.text}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* ROW 2 — Right → Left */}
+      {/* ROW 2 */}
       <div
         ref={row2Ref}
-        className="flex gap-6 px-10 py-2 mt-4 overflow-hidden"
+        className="flex gap-6 px-10 py-2 mt-5 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
         {longList.map((t, i) => (
           <motion.div
             key={`r2-${i}`}
-            className="min-w-[380px] max-w-[380px] bg-primary/10 rounded-xl p-6 border border-gray-300 shadow-lg"
+            className="min-w-[380px] max-w-[380px] bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <div className="flex items-start mb-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
+            <div className="flex gap-1 mb-4">
+              {Array.from({ length: t.rating }).map((_, idx) => (
+                <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">{t.text}</p>
+            <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+                {t.name.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-primary text-sm">{t.role}</p>
+                <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                <p className="text-primary text-xs font-medium">{t.role}</p>
               </div>
             </div>
-            <p className="text-gray-700 text-sm leading-relaxed">{t.text}</p>
           </motion.div>
         ))}
       </div>

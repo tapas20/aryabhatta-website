@@ -14,53 +14,46 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://www.alsyedgroup.net";
+const SITE_URL = "https://www.brightmindacademy.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Al Syed Group | Leading Construction & Demolition Company in Saudi Arabia",
-    template: "%s | Al Syed Group",
+      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+    template: "%s | BrightMind Academy",
   },
   description:
-    "Al Syed Group is a leading construction, demolition, and engineering services company in Saudi Arabia. We deliver excellence in general construction, demolition, heavy equipment rental, rigging, plant maintenance, and logistics across Dammam, Riyadh, Jeddah, and all KSA.",
+    "BrightMind Academy is a premier coaching center for classes 6 to 12, offering expert coaching for CBSE and CHSE boards. We provide personalized learning, experienced faculty, and proven results in Science, Commerce, and Arts streams.",
   keywords: [
-    "Al Syed Group",
-    "AlSyed Group",
-    "Al Syed Company",
-    "construction company Saudi Arabia",
-    "best construction company in Saudi Arabia",
-    "demolition company Saudi Arabia",
-    "best demolition work in Saudi Arabia",
-    "demolition services KSA",
-    "construction services Dammam",
-    "construction company Dammam",
-    "demolition company Dammam",
-    "heavy equipment rental Saudi Arabia",
-    "rigging and lifting Saudi Arabia",
-    "plant maintenance Saudi Arabia",
-    "logistics company Saudi Arabia",
-    "general contractor Saudi Arabia",
-    "construction engineering KSA",
-    "building contractor Dammam",
-    "site clearance Saudi Arabia",
-    "steel fabrication Saudi Arabia",
-    "MEP services Saudi Arabia",
-    "interior design Saudi Arabia",
-    "asphalt paving Saudi Arabia",
-    "gypsum works Saudi Arabia",
-    "technical solutions Saudi Arabia",
-    "QHSE Saudi Arabia",
-    "construction company Riyadh",
-    "construction company Jeddah",
-    "demolition services Dammam",
-    "best contractor in Saudi Arabia",
-    "alsyedgroup",
+    "BrightMind Academy",
+    "coaching center",
+    "CBSE coaching",
+    "CHSE coaching",
+    "class 6 to 12 coaching",
+    "best coaching center",
+    "tuition center",
+    "science coaching",
+    "maths coaching",
+    "physics coaching",
+    "chemistry coaching",
+    "biology coaching",
+    "board exam preparation",
+    "CBSE board coaching",
+    "CHSE board coaching",
+    "JEE preparation",
+    "NEET preparation",
+    "competitive exam coaching",
+    "best tuition classes",
+    "online coaching",
+    "offline coaching",
+    "experienced faculty",
+    "student results",
+    "academic excellence",
   ],
-  authors: [{ name: "Al Syed Group" }],
-  creator: "Al Syed Group",
-  publisher: "Al Syed Group",
+  authors: [{ name: "BrightMind Academy" }],
+  creator: "BrightMind Academy",
+  publisher: "BrightMind Academy",
   formatDetection: {
     email: false,
     address: false,
@@ -71,30 +64,30 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: SITE_URL,
-    siteName: "Al Syed Group",
+    siteName: "BrightMind Academy",
     title:
-      "Al Syed Group | Leading Construction & Demolition Company in Saudi Arabia",
+      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
-      "Al Syed Group delivers excellence in construction, demolition, heavy equipment rental, rigging, plant maintenance, and engineering services across Saudi Arabia.",
+      "Premier coaching center for classes 6-12. Expert faculty, proven results, and personalized learning for CBSE & CHSE boards.",
     images: [
       {
-        url: "/assets/alsyed-logo.png",
+        url: "/assets/logo.png",
         width: 1200,
         height: 630,
-        alt: "Al Syed Group - Construction & Engineering Services in Saudi Arabia",
+        alt: "BrightMind Academy - Best Coaching Center for Classes 6-12",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Al Syed Group | Leading Construction & Demolition Company in Saudi Arabia",
+      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
-      "Al Syed Group delivers excellence in construction, demolition, heavy equipment rental, rigging, plant maintenance, and engineering services across Saudi Arabia.",
-    images: ["/assets/alsyed-logo.png"],
-    creator: "@alsyedgroup",
+      "Premier coaching center for classes 6-12. Expert faculty, proven results, and personalized learning for CBSE & CHSE boards.",
+    images: ["/assets/logo.png"],
+    creator: "@brightmindacademy",
   },
   robots: {
     index: true,
@@ -107,11 +100,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    // Add your Google Search Console verification code here
-    // google: "your-google-verification-code",
-  },
-  category: "Construction",
+  category: "Education",
 };
 
 export default function RootLayout({
@@ -122,10 +111,10 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        <link rel="icon" type="image/png" href="/assets/alsyed-logo.png" />
-        <link rel="apple-touch-icon" href="/assets/alsyed-logo.png" />
+        <link rel="icon" type="image/png" href="/assets/logo.png" />
+        <link rel="apple-touch-icon" href="/assets/logo.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#4F46E5" />
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
