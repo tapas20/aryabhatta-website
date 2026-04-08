@@ -32,10 +32,7 @@ const SocialIcon = () => {
           className="group p-2.5 md:p-3 rounded-full bg-primary shadow-lg shadow-primary/30
             transition-all duration-300 hover:scale-110"
         >
-          <Phone
-            size={18}
-            className="text-white md:w-[20px] md:h-[20px]"
-          />
+          <Phone size={18} className="text-white md:w-[20px] md:h-[20px]" />
         </a>
       </div>
 
@@ -44,7 +41,7 @@ const SocialIcon = () => {
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-5 right-6 p-3 rounded-full bg-primary shadow-lg shadow-primary/30 border border-indigo-400/20 transition-transform duration-200 z-50"
+        className="fixed bottom-5 right-6 p-3 rounded-full bg-primary shadow-lg shadow-primary/30 border border-teal-600/20 transition-transform duration-200 z-50"
       >
         <ArrowUp size={22} className="text-white" />
       </motion.button>

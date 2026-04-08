@@ -22,7 +22,7 @@ export default function SplashScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700"
+          className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-gradient-to-br from-primary via-teal-700 to-teal-900"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}

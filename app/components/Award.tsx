@@ -13,12 +13,14 @@ const milestones = [
   {
     year: "2024",
     title: "50+ Students Qualified JEE & NEET",
-    subtitle: "Record-breaking competitive exam results with integrated coaching",
+    subtitle:
+      "Record-breaking competitive exam results with integrated coaching",
   },
   {
     year: "2023",
     title: "100% Pass Rate in CHSE Board Exams",
-    subtitle: "Every student passed with first division — 80% scored distinction",
+    subtitle:
+      "Every student passed with first division — 80% scored distinction",
   },
   {
     year: "2021",
@@ -33,7 +35,8 @@ const milestones = [
   {
     year: "2015",
     title: "Academy Founded",
-    subtitle: "Started with a vision to provide quality education for every student",
+    subtitle:
+      "Started with a vision to provide quality education for every student",
   },
 ];
 
@@ -48,11 +51,11 @@ export default function Award() {
   }, []);
 
   return (
-    <section className="relative w-full py-20 bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 overflow-hidden">
+    <section className="relative w-full py-20 bg-gradient-to-br from-primary via-teal-700 to-teal-900 overflow-hidden">
       {/* Decorative */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -63,8 +66,10 @@ export default function Award() {
 
       <div className="relative max-w-4xl mx-auto text-center px-4">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
-          <Trophy className="w-4 h-4 text-amber-300" />
-          <span className="text-sm font-medium text-white/90">Our Milestones</span>
+          <Trophy className="w-4 h-4 text-accent" />
+          <span className="text-sm font-medium text-white/90">
+            Our Milestones
+          </span>
         </div>
 
         <motion.h2

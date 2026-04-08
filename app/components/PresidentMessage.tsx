@@ -2,7 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Quote, BookOpen, Target, Users, Award, Heart, GraduationCap } from "lucide-react";
+import {
+  Quote,
+  BookOpen,
+  Target,
+  Users,
+  Award,
+  Heart,
+  GraduationCap,
+} from "lucide-react";
 
 const DIRECTOR_NAME = "The Director";
 const DIRECTOR_ROLE = "Founder & Director, BrightMind Academy";
@@ -50,7 +58,7 @@ const PresidentMessage = () => {
 
   return (
     <section
-      className="py-12 sm:py-16 md:py-24 px-4 md:px-8 bg-slate-50 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 px-4 md:px-8 bg-secondary relative overflow-hidden"
       dir="ltr"
     >
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -72,15 +80,15 @@ const PresidentMessage = () => {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-14 md:mb-20"
         >
-          <p className="text-xs sm:text-sm tracking-[0.2em] uppercase text-slate-500">
+          <p className="text-xs sm:text-sm tracking-[0.2em] uppercase text-muted-foreground">
             BrightMind Academy
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-light text-slate-900">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-light text-foreground">
             Director&apos;s{" "}
             <span className="font-bold text-primary">Message</span>
           </h2>
           <div className="w-20 h-0.5 bg-primary mx-auto mt-4 sm:mt-6" />
-          <p className="text-slate-600 mt-4 sm:mt-6 max-w-2xl mx-auto font-light text-base sm:text-lg px-4">
+          <p className="text-muted-foreground mt-4 sm:mt-6 max-w-2xl mx-auto font-light text-base sm:text-lg px-4">
             A message reflecting our commitment to nurturing young minds and
             building a brighter future through quality education.
           </p>
@@ -95,8 +103,8 @@ const PresidentMessage = () => {
             viewport={{ once: true }}
             className="lg:col-span-4 h-full self-stretch flex flex-col gap-6"
           >
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col flex-1">
-              <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6 sm:p-8 flex flex-col flex-1">
+              <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-4">
                 Our Core Values
               </h4>
 
@@ -104,14 +112,16 @@ const PresidentMessage = () => {
                 {focusAreas.map((it, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-3 rounded-xl border border-slate-200 p-4 bg-slate-50"
+                    className="flex items-start gap-3 rounded-xl border border-border p-4 bg-secondary"
                   >
-                    <div className="shrink-0 w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-indigo-200/50">
+                    <div className="shrink-0 w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/15">
                       {it.icon}
                     </div>
                     <div className="text-left">
-                      <p className="font-semibold text-slate-900">{it.title}</p>
-                      <p className="text-slate-600 text-sm font-light leading-relaxed">
+                      <p className="font-semibold text-foreground">
+                        {it.title}
+                      </p>
+                      <p className="text-muted-foreground text-sm font-light leading-relaxed">
                         {it.desc}
                       </p>
                     </div>
@@ -129,20 +139,20 @@ const PresidentMessage = () => {
             viewport={{ once: true }}
             className="lg:col-span-8 h-full self-stretch"
           >
-            <div className="relative bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden h-full flex flex-col">
-              <div className="h-1.5 bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500" />
+            <div className="relative bg-card rounded-2xl border border-border shadow-sm overflow-hidden h-full flex flex-col">
+              <div className="h-1.5 bg-gradient-to-r from-primary via-teal-500 to-emerald-500" />
 
               <div className="p-6 sm:p-8 md:p-10 flex-1">
                 <div className="flex items-start gap-3 sm:gap-4 mb-6">
-                  <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-indigo-200/50">
+                  <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/15">
                     <Quote className="w-6 h-6 text-primary" />
                   </div>
 
                   <div className="text-left">
-                    <p className="text-xs sm:text-sm uppercase tracking-wider text-slate-500">
+                    <p className="text-xs sm:text-sm uppercase tracking-wider text-muted-foreground">
                       Our Vision
                     </p>
-                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-900">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
                       Every student deserves excellence
                     </h3>
                   </div>
@@ -156,7 +166,7 @@ const PresidentMessage = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.55, delay: i * 0.06 }}
                       viewport={{ once: true }}
-                      className="text-slate-700 leading-relaxed font-light text-sm sm:text-base md:text-lg"
+                      className="text-muted-foreground leading-relaxed font-light text-sm sm:text-base md:text-lg"
                     >
                       {t}
                     </motion.p>
@@ -167,7 +177,7 @@ const PresidentMessage = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, delay: 0.32 }}
                     viewport={{ once: true }}
-                    className="text-slate-900 leading-relaxed text-sm sm:text-base md:text-lg"
+                    className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg"
                   >
                     Education is our mission, and{" "}
                     <span className="font-semibold">
@@ -175,16 +185,18 @@ const PresidentMessage = () => {
                     </span>
                   </motion.p>
 
-                  <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-slate-200">
+                  <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border">
                     <div className="text-left">
-                      <p className="text-slate-900 font-semibold">
+                      <p className="text-foreground font-semibold">
                         {DIRECTOR_NAME}
                       </p>
-                      <p className="text-slate-500 text-sm">{DIRECTOR_ROLE}</p>
+                      <p className="text-muted-foreground text-sm">
+                        {DIRECTOR_ROLE}
+                      </p>
                     </div>
 
                     <div className="text-left sm:text-right">
-                      <p className="text-xs sm:text-sm text-slate-500">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         Bhubaneswar, Odisha &bull; Serving students since 2015
                       </p>
                     </div>
@@ -192,7 +204,7 @@ const PresidentMessage = () => {
                 </div>
               </div>
 
-              <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-indigo-100/30 blur-3xl" />
+              <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
             </div>
           </motion.div>
         </div>

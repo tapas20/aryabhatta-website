@@ -1,172 +1,318 @@
 import type { Metadata } from "next";
-import HomeCta from "../components/HomeCta";
+import Link from "next/link";
+import { coursesData } from "@/lib/courses";
+import type { LucideIcon } from "lucide-react";
+import {
+  BookOpen,
+  Target,
+  Atom,
+  TrendingUp,
+  FlaskConical,
+  Palette,
+  Rocket,
+  HelpCircle,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Courses",
+  title: "Courses & Programs",
   description:
     "Explore our comprehensive coaching programs for CBSE & CHSE classes 6-12. Science, Commerce, Arts streams, JEE & NEET foundation coaching available at BrightMind Academy.",
 };
 
-const programs = [
-  {
-    id: "middle-school",
-    title: "Classes 6-8 (Middle School)",
-    board: "CBSE",
-    subjects: ["Mathematics", "Science", "English", "Social Science", "Hindi/Odia"],
-    features: ["Concept-building approach", "Activity-based learning", "Regular class tests", "Parent-teacher interactions"],
-    gradient: "from-blue-500 to-indigo-500",
-    bgColor: "bg-blue-50",
-    borderColor: "border-blue-100",
-  },
-  {
-    id: "cbse-secondary",
-    title: "Classes 9-10 (Secondary)",
-    board: "CBSE",
-    subjects: ["Mathematics", "Science", "English", "Social Science", "Hindi/Odia"],
-    features: ["Board exam focused preparation", "NCERT + reference books", "Mock board exams", "Previous year paper practice"],
-    gradient: "from-indigo-500 to-violet-500",
-    bgColor: "bg-indigo-50",
-    borderColor: "border-indigo-100",
-  },
-  {
-    id: "cbse-science",
-    title: "Class 11-12 Science (CBSE)",
-    board: "CBSE",
-    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English"],
-    features: ["Board + JEE/NEET integrated", "Lab practicals guidance", "Weekly problem-solving sessions", "Comprehensive study material"],
-    gradient: "from-violet-500 to-purple-500",
-    bgColor: "bg-violet-50",
-    borderColor: "border-violet-100",
-  },
-  {
-    id: "cbse-commerce",
-    title: "Class 11-12 Commerce (CBSE)",
-    board: "CBSE",
-    subjects: ["Accountancy", "Business Studies", "Economics", "Mathematics/IP", "English"],
-    features: ["Practical case studies", "Project guidance", "CA foundation basics", "Board exam mastery"],
-    gradient: "from-amber-500 to-orange-500",
-    bgColor: "bg-amber-50",
-    borderColor: "border-amber-100",
-  },
-  {
-    id: "chse-science",
-    title: "Class 11-12 Science (CHSE)",
-    board: "CHSE",
-    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English/MIL"],
-    features: ["CHSE syllabus focused", "Chapter-wise test series", "Board exam strategies", "Lab & practical support"],
-    gradient: "from-emerald-500 to-teal-500",
-    bgColor: "bg-emerald-50",
-    borderColor: "border-emerald-100",
-  },
-  {
-    id: "chse-arts",
-    title: "Class 11-12 Arts (CHSE)",
-    board: "CHSE",
-    subjects: ["History", "Political Science", "Economics", "Geography/Sociology", "English/MIL"],
-    features: ["Answer writing practice", "Map & diagram guidance", "Essay writing workshops", "Current affairs sessions"],
-    gradient: "from-rose-500 to-pink-500",
-    bgColor: "bg-rose-50",
-    borderColor: "border-rose-100",
-  },
-  {
-    id: "competitive",
-    title: "JEE & NEET Foundation",
-    board: "Competitive",
-    subjects: ["Physics", "Chemistry", "Mathematics (JEE)", "Biology (NEET)"],
-    features: ["Foundation from Class 8", "Advanced problem solving", "National-level test series", "Mentorship from toppers"],
-    gradient: "from-red-500 to-rose-500",
-    bgColor: "bg-red-50",
-    borderColor: "border-red-100",
-  },
-  {
-    id: "doubt-clearing",
-    title: "Doubt Clearing Sessions",
-    board: "All Boards",
-    subjects: ["Any subject on request"],
-    features: ["One-on-one sessions", "Flexible scheduling", "Expert faculty", "Focused topic coverage"],
-    gradient: "from-cyan-500 to-blue-500",
-    bgColor: "bg-cyan-50",
-    borderColor: "border-cyan-100",
-  },
-];
+const iconMap: Record<string, LucideIcon> = {
+  BookOpen,
+  Target,
+  Atom,
+  TrendingUp,
+  FlaskConical,
+  Palette,
+  Rocket,
+  HelpCircle,
+};
 
 export default function CoursesPage() {
   return (
     <div className="scroll-smooth">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary via-teal-700 to-teal-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
-            <span className="text-sm font-medium text-white/90">Our Programs</span>
+            <span className="text-sm font-medium text-white/90">
+              Our Programs
+            </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             Courses & Programs
           </h1>
           <p className="text-lg text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Comprehensive coaching programs designed for CBSE & CHSE students from
-            classes 6 to 12. Choose the program that fits your academic goals.
+            Comprehensive coaching programs designed for CBSE & CHSE students
+            from classes 6 to 12. Choose the program that fits your academic
+            goals.
           </p>
         </div>
       </section>
 
-      {/* Programs Grid */}
-      <section className="py-20 bg-white">
+      {/* Stats Section */}
+      <section className="py-12 bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programs.map((program) => (
-              <div
-                key={program.id}
-                id={program.id}
-                className={`rounded-2xl border ${program.borderColor} ${program.bgColor} p-8 scroll-mt-24 hover:shadow-lg transition-shadow duration-300`}
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {program.title}
-                  </h3>
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full text-white bg-gradient-to-r ${program.gradient}`}>
-                    {program.board}
-                  </span>
-                </div>
-
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-slate-700 mb-3">Subjects Covered:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {program.subjects.map((subject) => (
-                      <span
-                        key={subject}
-                        className="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700"
-                      >
-                        {subject}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-sm font-semibold text-slate-700 mb-3">Key Features:</p>
-                  <ul className="space-y-2">
-                    {program.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
-                        <svg className="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+                8+
               </div>
-            ))}
+              <div className="text-sm text-muted-foreground font-medium">
+                Programs Offered
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+                50+
+              </div>
+              <div className="text-sm text-muted-foreground font-medium">
+                Expert Faculty
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+                95%+
+              </div>
+              <div className="text-sm text-muted-foreground font-medium">
+                Success Rate
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+                5000+
+              </div>
+              <div className="text-sm text-muted-foreground font-medium">
+                Students Enrolled
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <HomeCta />
+      {/* Programs Overview - NO cards, just categories */}
+      <section className="py-20 bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary">
+                Our Programs
+              </p>
+              <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground mb-6">
+              Comprehensive Coaching Programs
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              We offer specialized coaching for CBSE & CHSE students from
+              classes 6 to 12. Click on any program category below to explore
+              complete details including syllabus, faculty, testimonials, and
+              enrollment options.
+            </p>
+          </div>
+
+          {/* Program Categories - Simple List */}
+          <div className="max-w-4xl mx-auto space-y-4">
+            {coursesData.map((course) => {
+              const IconComponent = iconMap[course.icon] || BookOpen;
+              return (
+                <Link
+                  key={course.id}
+                  href={`/courses/${course.slug}`}
+                  className="group block p-6 rounded-2xl border border-border bg-card hover:shadow-xl hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-center gap-6">
+                    {/* Icon */}
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${course.gradient} flex items-center justify-center text-white shrink-0 shadow-lg`}
+                    >
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span
+                          className={`text-xs font-bold px-3 py-1 rounded-full text-white bg-gradient-to-r ${course.gradient}`}
+                        >
+                          {course.board}
+                        </span>
+                        <span className="text-xs font-semibold text-muted-foreground">
+                          Class {course.classLevel}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {course.shortDescription}
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="shrink-0">
+                      <svg
+                        className="w-6 h-6 text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Simple CTA */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-muted-foreground mb-6">
+              Click on any program above to explore complete details including
+              syllabus, faculty, testimonials, pricing, and enrollment options.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:scale-105"
+            >
+              Get Complete Course Catalog
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Programs */}
+      <section className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary">
+                Why BrightMind
+              </p>
+              <span className="h-[2px] w-10 bg-primary rounded-full"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground mb-4">
+              What Makes Our Programs Special
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                <Target className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Personalized Attention
+              </h3>
+              <p className="text-muted-foreground">
+                Small batch sizes ensure every student gets individual guidance
+                and support throughout their learning journey.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mx-auto mb-4">
+                <BookOpen className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Expert Faculty
+              </h3>
+              <p className="text-muted-foreground">
+                Learn from experienced teachers with proven track records of
+                producing top performers in board and competitive exams.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 mx-auto mb-4">
+                <TrendingUp className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Regular Assessments
+              </h3>
+              <p className="text-muted-foreground">
+                Weekly tests, monthly exams, and detailed performance analysis
+                to track progress and identify areas for improvement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-primary via-teal-700 to-teal-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6">
+            Ready to Start Your Journey?
+          </h2>
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            Join thousands of successful students who have achieved their
+            academic goals with BrightMind Academy. Enroll today and take the
+            first step towards excellence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:scale-105"
+            >
+              Enroll Now
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md text-white font-bold px-8 py-4 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            >
+              Schedule a Free Demo
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

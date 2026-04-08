@@ -19,8 +19,7 @@ const SITE_URL = "https://www.brightmindacademy.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+    default: "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     template: "%s | BrightMind Academy",
   },
   description:
@@ -67,8 +66,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: "BrightMind Academy",
-    title:
-      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+    title: "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
       "Premier coaching center for classes 6-12. Expert faculty, proven results, and personalized learning for CBSE & CHSE boards.",
     images: [
@@ -82,8 +80,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+    title: "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
       "Premier coaching center for classes 6-12. Expert faculty, proven results, and personalized learning for CBSE & CHSE boards.",
     images: ["/assets/logo.png"],
@@ -114,7 +111,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/assets/logo.png" />
         <link rel="apple-touch-icon" href="/assets/logo.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#4F46E5" />
+        <meta name="theme-color" content="#0D7377" />
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />

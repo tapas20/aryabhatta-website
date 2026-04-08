@@ -82,7 +82,7 @@ export default function TestimonialCarousel() {
 
   const moveForward = (
     ref: React.RefObject<HTMLDivElement | null>,
-    speed: number
+    speed: number,
   ) => {
     if (!ref.current) return;
     ref.current.scrollLeft += speed;
@@ -96,7 +96,7 @@ export default function TestimonialCarousel() {
 
   const moveBackward = (
     ref: React.RefObject<HTMLDivElement | null>,
-    speed: number
+    speed: number,
   ) => {
     if (!ref.current) return;
     ref.current.scrollLeft -= speed;
@@ -117,11 +117,11 @@ export default function TestimonialCarousel() {
   }, [paused]);
 
   return (
-    <div className="relative w-full bg-slate-50 py-20 text-slate-900 select-none overflow-hidden">
+    <div className="relative w-full bg-secondary py-20 text-foreground select-none overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-100/50 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-100/50 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="text-center mb-12 px-4">
@@ -132,7 +132,7 @@ export default function TestimonialCarousel() {
           </p>
           <span className="h-[2px] w-10 bg-primary rounded-full"></span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-foreground">
           What Our Students &amp; Parents Say
         </h2>
       </div>
@@ -147,22 +147,26 @@ export default function TestimonialCarousel() {
         {longList.map((t, i) => (
           <motion.div
             key={`r1-${i}`}
-            className="min-w-[380px] max-w-[380px] bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            className="min-w-[380px] max-w-[380px] bg-card rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <div className="flex gap-1 mb-4">
               {Array.from({ length: t.rating }).map((_, idx) => (
-                <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star key={idx} className="w-4 h-4 fill-accent text-accent" />
               ))}
             </div>
-            <p className="text-slate-600 text-sm leading-relaxed mb-5">{t.text}</p>
-            <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              {t.text}
+            </p>
+            <div className="flex items-center gap-3 pt-4 border-t border-border">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-teal-600 flex items-center justify-center text-white font-bold text-sm">
                 {t.name.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                <p className="font-semibold text-foreground text-sm">
+                  {t.name}
+                </p>
                 <p className="text-primary text-xs font-medium">{t.role}</p>
               </div>
             </div>
@@ -180,22 +184,26 @@ export default function TestimonialCarousel() {
         {longList.map((t, i) => (
           <motion.div
             key={`r2-${i}`}
-            className="min-w-[380px] max-w-[380px] bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            className="min-w-[380px] max-w-[380px] bg-card rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <div className="flex gap-1 mb-4">
               {Array.from({ length: t.rating }).map((_, idx) => (
-                <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star key={idx} className="w-4 h-4 fill-accent text-accent" />
               ))}
             </div>
-            <p className="text-slate-600 text-sm leading-relaxed mb-5">{t.text}</p>
-            <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              {t.text}
+            </p>
+            <div className="flex items-center gap-3 pt-4 border-t border-border">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-600 to-primary flex items-center justify-center text-white font-bold text-sm">
                 {t.name.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                <p className="font-semibold text-foreground text-sm">
+                  {t.name}
+                </p>
                 <p className="text-primary text-xs font-medium">{t.role}</p>
               </div>
             </div>

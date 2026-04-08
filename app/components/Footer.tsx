@@ -1,5 +1,15 @@
 import React from "react";
-import { Facebook, Linkedin, Instagram, MessageCircle, Youtube, GraduationCap, MapPin, Phone, Mail } from "lucide-react";
+import {
+  Facebook,
+  Linkedin,
+  Instagram,
+  MessageCircle,
+  Youtube,
+  GraduationCap,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -14,15 +24,19 @@ const Footer = () => {
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <div>
-                <p className="text-lg font-extrabold tracking-tight leading-none">BrightMind</p>
-                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/50 leading-none">Academy</p>
+                <p className="text-lg font-extrabold tracking-tight leading-none">
+                  BrightMind
+                </p>
+                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/50 leading-none">
+                  Academy
+                </p>
               </div>
             </div>
 
             <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
-              Premier coaching center for classes 6-12, providing expert coaching
-              for CBSE and CHSE boards. We shape future toppers with personalized
-              learning and proven results.
+              Premier coaching center for classes 6-12, providing expert
+              coaching for CBSE and CHSE boards. We shape future toppers with
+              personalized learning and proven results.
             </p>
 
             <div className="pt-2">
@@ -85,7 +99,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 text-sm"
+                    className="text-slate-400 hover:text-teal-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -111,7 +125,7 @@ const Footer = () => {
                 <li key={prog}>
                   <Link
                     href="/courses"
-                    className="text-slate-400 hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 text-sm"
+                    className="text-slate-400 hover:text-teal-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm"
                   >
                     {prog}
                   </Link>
@@ -138,7 +152,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a
                   href="tel:+919876543210"
-                  className="text-slate-400 hover:text-primary transition-colors text-sm"
+                  className="text-slate-400 hover:text-teal-400 transition-colors text-sm"
                 >
                   +91 98765 43210
                 </a>
@@ -147,7 +161,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a
                   href="mailto:info@brightmindacademy.in"
-                  className="text-slate-400 hover:text-primary transition-colors text-sm"
+                  className="text-slate-400 hover:text-teal-400 transition-colors text-sm"
                 >
                   info@brightmindacademy.in
                 </a>
@@ -159,7 +173,8 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} BrightMind Academy. All rights reserved.
+            &copy; {new Date().getFullYear()} BrightMind Academy. All rights
+            reserved.
           </p>
           <p className="text-xs text-slate-600">
             CBSE & CHSE Affiliated Coaching Center

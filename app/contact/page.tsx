@@ -59,26 +59,31 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-card text-foreground">
       {/* HERO */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary via-teal-700 to-teal-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
-            <span className="text-sm font-medium text-white/90">Contact Us</span>
+            <span className="text-sm font-medium text-white/90">
+              Contact Us
+            </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             Get In Touch
           </h1>
           <p className="text-lg text-white/70 mt-4 max-w-xl mx-auto">
-            Have questions about admissions, courses, or fees? We&apos;re here to help!
+            Have questions about admissions, courses, or fees? We&apos;re here
+            to help!
           </p>
           <div className="mt-6 text-white/60 text-sm font-medium tracking-wide">
-            <Link href="/" className="hover:text-white transition">Home</Link>
+            <Link href="/" className="hover:text-white transition">
+              Home
+            </Link>
             <span className="mx-3">&gt;</span>
             <span className="text-white font-semibold">Contact</span>
           </div>
@@ -92,10 +97,10 @@ export default function ContactPage() {
         variants={fadeUp}
         className="max-w-6xl mx-auto px-6 py-20"
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-slate-900">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-foreground">
           Contact Information
         </h2>
-        <p className="text-slate-500 text-center mt-2">
+        <p className="text-muted-foreground text-center mt-2">
           Reach out to us — we respond quickly!
         </p>
 
@@ -130,8 +135,8 @@ export default function ContactPage() {
       >
         {/* Decorative */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
@@ -144,7 +149,8 @@ export default function ContactPage() {
             <div className="h-1.5 w-36 bg-primary rounded-full" />
 
             <h3 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              Book a Free <br />Demo Class
+              Book a Free <br />
+              Demo Class
             </h3>
 
             <p className="text-slate-300 text-lg max-w-lg">
@@ -158,8 +164,8 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-white/90">Our Location</p>
                   <p className="text-slate-400 text-sm">
-                    123 Education Lane, Near City Center,
-                    Bhubaneswar, Odisha - 751001
+                    123 Education Lane, Near City Center, Bhubaneswar, Odisha -
+                    751001
                   </p>
                 </div>
               </div>
@@ -199,20 +205,39 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative rounded-3xl shadow-2xl p-[2px] bg-gradient-to-br from-indigo-500 to-violet-500"
+            className="relative rounded-3xl shadow-2xl p-[2px] bg-gradient-to-br from-primary to-teal-600"
           >
             <form
               onSubmit={onSubmit}
               className="bg-white rounded-3xl p-10 space-y-6"
             >
-              <h4 className="text-xl font-bold text-slate-900 mb-2">Enquiry Form</h4>
+              <h4 className="text-xl font-bold text-slate-900 mb-2">
+                Enquiry Form
+              </h4>
 
-              <InputField label="Student Name" type="text" name="name" required />
-              <InputField label="Parent/Guardian Email" type="email" name="email" required />
-              <InputField label="Phone Number" type="tel" name="phone" required />
+              <InputField
+                label="Student Name"
+                type="text"
+                name="name"
+                required
+              />
+              <InputField
+                label="Parent/Guardian Email"
+                type="email"
+                name="email"
+                required
+              />
+              <InputField
+                label="Phone Number"
+                type="tel"
+                name="phone"
+                required
+              />
 
               <div>
-                <label className="block font-medium text-slate-700 mb-2">Class Interested In</label>
+                <label className="block font-medium text-slate-700 mb-2">
+                  Class Interested In
+                </label>
                 <select
                   name="class"
                   className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-slate-700 bg-white"
@@ -220,16 +245,26 @@ export default function ContactPage() {
                   <option value="">Select Class</option>
                   <option value="6-8">Class 6-8</option>
                   <option value="9-10">Class 9-10 (CBSE)</option>
-                  <option value="11-12-science-cbse">Class 11-12 Science (CBSE)</option>
-                  <option value="11-12-commerce-cbse">Class 11-12 Commerce (CBSE)</option>
-                  <option value="11-12-science-chse">Class 11-12 Science (CHSE)</option>
-                  <option value="11-12-arts-chse">Class 11-12 Arts (CHSE)</option>
+                  <option value="11-12-science-cbse">
+                    Class 11-12 Science (CBSE)
+                  </option>
+                  <option value="11-12-commerce-cbse">
+                    Class 11-12 Commerce (CBSE)
+                  </option>
+                  <option value="11-12-science-chse">
+                    Class 11-12 Science (CHSE)
+                  </option>
+                  <option value="11-12-arts-chse">
+                    Class 11-12 Arts (CHSE)
+                  </option>
                   <option value="jee-neet">JEE & NEET Foundation</option>
                 </select>
               </div>
 
               <div>
-                <label className="block font-medium text-slate-700 mb-2">Message</label>
+                <label className="block font-medium text-slate-700 mb-2">
+                  Message
+                </label>
                 <textarea
                   rows={4}
                   name="message"
@@ -238,7 +273,11 @@ export default function ContactPage() {
                 />
               </div>
 
-              <input type="hidden" name="from_name" value="BrightMind Academy Website" />
+              <input
+                type="hidden"
+                name="from_name"
+                value="BrightMind Academy Website"
+              />
 
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -248,7 +287,7 @@ export default function ContactPage() {
                 className={`w-full py-4 bg-primary text-white text-lg font-semibold rounded-xl shadow-xl shadow-primary/20 transition-all ${
                   isSubmitting
                     ? "opacity-70 cursor-not-allowed"
-                    : "hover:bg-indigo-700"
+                    : "hover:bg-teal-800"
                 }`}
               >
                 {isSubmitting ? "Sending..." : "Submit Enquiry"}
@@ -308,12 +347,12 @@ function ContactCard({ icon, title, value, text }: ContactCardProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       whileHover={{ y: -5 }}
-      className="p-8 bg-white shadow-sm rounded-2xl text-center border border-slate-100 hover:shadow-lg transition-shadow"
+      className="p-8 bg-card shadow-sm rounded-2xl text-center border border-border hover:shadow-lg transition-shadow"
     >
       <div className="flex justify-center">{icon}</div>
-      <h4 className="text-lg font-bold mt-4 text-slate-900">{title}</h4>
-      <p className="text-slate-800 font-medium mt-2">{value}</p>
-      <p className="text-slate-500 text-sm mt-1">{text}</p>
+      <h4 className="text-lg font-bold mt-4 text-foreground">{title}</h4>
+      <p className="text-foreground/80 font-medium mt-2">{value}</p>
+      <p className="text-muted-foreground text-sm mt-1">{text}</p>
     </motion.div>
   );
 }
