@@ -12,8 +12,8 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const DIRECTOR_NAME = "The Director";
-const DIRECTOR_ROLE = "Founder & Director, Aryabhatta Educations";
+const DIRECTOR_NAME = "Dr. Biswanath Mohanta";
+const DIRECTOR_ROLE = "Founder & Director, Aryabhatta Educations | Ph.D. in Mathematics";
 
 const focusAreas = [
   {
@@ -197,7 +197,7 @@ const PresidentMessage = () => {
 
                     <div className="text-left sm:text-right">
                       <p className="text-xs sm:text-sm text-muted-foreground">
-                        Bhubaneswar, Odisha &bull; Serving students since 2015
+                        Dhenkikote, Keonjhar, Odisha &bull; Serving students since 2015
                       </p>
                     </div>
                   </div>

@@ -143,9 +143,9 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-slate-400 text-sm">
-                  123 Education Lane, Near City Center,
+                  Dhenkikote, Keonjhar,
                   <br />
-                  Bhubaneswar, Odisha - 751001
+                  Odisha - 758025
                 </span>
               </li>
               <li className="flex items-center gap-3">

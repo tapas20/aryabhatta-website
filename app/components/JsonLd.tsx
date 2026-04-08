@@ -10,10 +10,10 @@ export function OrganizationJsonLd() {
       "Aryabhatta Educations is a premier coaching center for classes 6 to 12, providing expert coaching for CBSE and CHSE boards with personalized learning and proven results.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Education Lane, Near City Center",
-      addressLocality: "Bhubaneswar",
+      streetAddress: "Dhenkikote",
+      addressLocality: "Keonjhar",
       addressRegion: "Odisha",
-      postalCode: "751001",
+      postalCode: "758025",
       addressCountry: "IN",
     },
     contactPoint: [
@@ -61,10 +61,10 @@ export function LocalBusinessJsonLd() {
     email: "info@aryabhattaeducations.in",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Education Lane, Near City Center",
-      addressLocality: "Bhubaneswar",
+      streetAddress: "Dhenkikote",
+      addressLocality: "Keonjhar",
       addressRegion: "Odisha",
-      postalCode: "751001",
+      postalCode: "758025",
       addressCountry: "IN",
     },
     openingHoursSpecification: [

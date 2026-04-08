@@ -153,7 +153,7 @@ export async function POST(req: Request) {
           ` : ""}
 
           <p style="font-size: 15px; color: #374151; margin-top: 20px;">Warm Regards,<br/><strong style="color: #4F46E5;">Aryabhatta Educations</strong><br/>
-          <span style="font-size: 13px; color: #6b7280;">123 Education Lane, Bhubaneswar, Odisha<br/>Phone: +91 98765 43210</span></p>
+          <span style="font-size: 13px; color: #6b7280;">Dhenkikote, Keonjhar, Odisha<br/>Phone: +91 98765 43210</span></p>
         </div>
       </div>
     `;

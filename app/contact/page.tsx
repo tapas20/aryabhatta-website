@@ -120,8 +120,8 @@ export default function ContactPage() {
           <ContactCard
             icon={<MapPin size={28} className="text-primary" />}
             title="Visit Us"
-            value="123 Education Lane"
-            text="Near City Center, Bhubaneswar"
+            value="Dhenkikote, Keonjhar"
+            text="Odisha - 758025"
           />
         </div>
       </motion.div>
@@ -164,8 +164,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-white/90">Our Location</p>
                   <p className="text-slate-400 text-sm">
-                    123 Education Lane, Near City Center, Bhubaneswar, Odisha -
-                    751001
+                    Dhenkikote, Keonjhar, Odisha - 758025
                   </p>
                 </div>
               </div>
@@ -321,7 +320,7 @@ export default function ContactPage() {
         className="w-full h-[400px]"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.53573639378!2d85.7066906!3d20.3008841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29344.88!2d85.58!3d21.53!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1905!2sDhenkikote%2C%20Keonjhar%2C%20Odisha!5e0!3m2!1sen!2sin"
           className="w-full h-full border-0"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
