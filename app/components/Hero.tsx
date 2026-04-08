@@ -91,32 +91,32 @@ const Hero = () => {
       <div className="absolute bottom-[30%] left-[10%] w-96 h-96 bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 pt-24 pb-0">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-0">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm rounded-full px-5 py-2 mb-8 border border-border shadow-sm">
+        <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8 border border-border shadow-sm">
           <span className="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center">
             <Star className="w-3 h-3 text-accent fill-accent" />
           </span>
-          <span className="text-foreground/70 text-sm font-medium">
+          <span className="text-foreground/70 text-xs sm:text-sm font-medium">
             Learn From the Top Experts
           </span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-center leading-[1.1] text-foreground">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-center leading-[1.1] text-foreground">
           Learn Anywhere, Anytime
           <br />
           <span className="text-primary">Empower Your Future</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-center text-muted-foreground font-medium text-base sm:text-lg max-w-xl leading-relaxed">
+        <p className="mt-4 sm:mt-6 text-center text-muted-foreground font-medium text-sm sm:text-lg max-w-xl leading-relaxed px-2">
           Join thousands of learners gaining new skills, advancing careers and
           shaping a better tomorrow — one lesson at a time.
         </p>
 
         {/* Search Bar */}
-        <div className="mt-8 w-full max-w-lg relative z-20" ref={wrapperRef}>
+        <div className="mt-6 sm:mt-8 w-full max-w-lg relative z-20" ref={wrapperRef}>
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
@@ -184,9 +184,9 @@ const Hero = () => {
         </div>
 
         {/* Hero Image with Floating Cards */}
-        <div className="mt-12 relative w-full max-w-6xl mx-auto">
+        <div className="mt-8 sm:mt-12 relative w-full max-w-6xl mx-auto">
           {/* Image */}
-          <div className="relative w-full max-w-3xl mx-auto aspect-[16/9] max-h-[480px]">
+          <div className="relative w-full max-w-sm sm:max-w-2xl lg:max-w-3xl mx-auto aspect-[3/4] sm:aspect-[16/9] max-h-[350px] sm:max-h-[480px]">
             <Image
               src="/assets/Hero.png"
               alt="Aryabhatta Educations - Professional Coaching Center"
@@ -198,41 +198,37 @@ const Hero = () => {
           </div>
 
           {/* Expert Faculty Card - Top Left */}
-          <div className="absolute top-[5%] left-0 bg-card rounded-2xl shadow-xl border border-border p-4 hidden lg:block">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-2.5">
-              <Users className="w-5 h-5 text-primary" />
+          <div className="absolute top-0 left-0 bg-card rounded-lg sm:rounded-2xl shadow-lg border border-border p-2 sm:p-4">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-1.5 sm:mb-2">
+              <Users className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary" />
             </div>
-            <p className="text-2xl font-extrabold text-foreground">50+</p>
-            <p className="text-xs text-muted-foreground font-medium mt-1 leading-snug">
-              Expert faculty with
-              <br />
-              proven track records.
+            <p className="text-base sm:text-2xl font-extrabold text-foreground">50+</p>
+            <p className="text-[9px] sm:text-xs text-muted-foreground font-medium mt-0.5 sm:mt-1 leading-snug">
+              Expert faculty
             </p>
           </div>
 
           {/* Awards Card - Top Right */}
-          <div className="absolute top-[2%] right-0 bg-card rounded-2xl shadow-xl border border-border p-4 hidden lg:block">
-            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-2.5">
-              <Award className="w-5 h-5 text-accent" />
+          <div className="absolute top-0 right-0 bg-card rounded-lg sm:rounded-2xl shadow-lg border border-border p-2 sm:p-4">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-1.5 sm:mb-2">
+              <Award className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-accent" />
             </div>
-            <p className="text-2xl font-extrabold text-foreground">95%</p>
-            <p className="text-xs text-muted-foreground font-medium mt-1 leading-snug">
-              Distinction rate in
-              <br />
-              board examinations.
+            <p className="text-base sm:text-2xl font-extrabold text-foreground">95%</p>
+            <p className="text-[9px] sm:text-xs text-muted-foreground font-medium mt-0.5 sm:mt-1 leading-snug">
+              Distinction rate
             </p>
           </div>
 
           {/* Rating Card - Bottom Left */}
-          <div className="absolute bottom-[8%] left-0 lg:left-[3%] bg-card rounded-2xl shadow-xl border border-border p-5">
-            <p className="text-3xl font-extrabold text-foreground">4.8</p>
-            <div className="flex items-center gap-0.5 mt-1">
+          <div className="absolute bottom-[5%] sm:bottom-[8%] left-0 lg:left-[3%] bg-card rounded-xl sm:rounded-2xl shadow-lg border border-border p-3 sm:p-5">
+            <p className="text-xl sm:text-3xl font-extrabold text-foreground">4.8</p>
+            <div className="flex items-center gap-0.5 mt-0.5 sm:mt-1">
               {[1, 2, 3, 4].map((i) => (
-                <Star key={i} className="w-4 h-4 text-accent fill-accent" />
+                <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 text-accent fill-accent" />
               ))}
-              <Star className="w-4 h-4 text-accent fill-accent/40" />
+              <Star className="w-3 sm:w-4 h-3 sm:h-4 text-accent fill-accent/40" />
             </div>
-            <p className="text-xs text-muted-foreground font-medium mt-2 leading-snug">
+            <p className="text-[10px] sm:text-xs text-muted-foreground font-medium mt-1 sm:mt-2 leading-snug">
               By students worldwide for
               <br />
               quality learning and support.
@@ -240,22 +236,21 @@ const Hero = () => {
           </div>
 
           {/* Learners Card - Bottom Right */}
-          <div className="absolute bottom-[12%] right-0 lg:right-[3%] bg-card rounded-2xl shadow-xl border border-border p-5">
-            {/* Avatar group */}
-            <div className="flex -space-x-2 mb-3">
+          <div className="absolute bottom-[8%] sm:bottom-[12%] right-0 lg:right-[3%] bg-card rounded-xl sm:rounded-2xl shadow-lg border border-border p-3 sm:p-5">
+            <div className="flex -space-x-1.5 sm:-space-x-2 mb-2 sm:mb-3">
               {["bg-primary", "bg-accent", "bg-teal-500", "bg-emerald-600"].map(
                 (color, i) => (
                   <div
                     key={i}
-                    className={`w-9 h-9 rounded-full ${color} border-2 border-card flex items-center justify-center text-white text-xs font-bold`}
+                    className={`w-6 h-6 sm:w-9 sm:h-9 rounded-full ${color} border-2 border-card flex items-center justify-center text-white text-[8px] sm:text-xs font-bold`}
                   >
                     {String.fromCharCode(65 + i)}
                   </div>
                 ),
               )}
             </div>
-            <p className="text-3xl font-extrabold text-foreground">60k+</p>
-            <p className="text-xs text-muted-foreground font-medium mt-1 leading-snug">
+            <p className="text-xl sm:text-3xl font-extrabold text-foreground">60k+</p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground font-medium mt-0.5 sm:mt-1 leading-snug">
               Learners growing with expert
               <br />
               guidance from trusted mentors.
