@@ -7,7 +7,7 @@ import HomeCta from "../components/HomeCta";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about BrightMind Academy — a premier coaching center for classes 6-12. Our expert faculty, proven methodology, and personalized approach help students excel in CBSE & CHSE board exams.",
+    "Learn about Aryabhatta Educations — a premier coaching center for classes 6-12. Our expert faculty, proven methodology, and personalized approach help students excel in CBSE & CHSE board exams.",
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
             Shaping Future Toppers
           </h1>
           <p className="text-lg text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            BrightMind Academy has been nurturing academic excellence since
+            Aryabhatta Educations has been nurturing academic excellence since
             2015. We provide a supportive, result-oriented learning environment
             where every student gets the attention they deserve.
           </p>

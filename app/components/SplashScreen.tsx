@@ -41,7 +41,7 @@ export default function SplashScreen() {
               className="text-center"
             >
               <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-                BrightMind Academy
+                Aryabhatta Educations
               </h1>
               <p className="text-base md:text-lg text-white/70 mt-3 font-medium tracking-wide">
                 Shaping Future Toppers

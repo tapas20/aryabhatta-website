@@ -831,7 +831,7 @@ export const coursesData: Course[] = [
         class: "JEE Advanced",
         score: "AIR 1245",
         quote:
-          "Started preparation in Class 8 at BrightMind. The foundation was so strong that JEE felt manageable.",
+          "Started preparation in Class 8 at Aryabhatta Educations. The foundation was so strong that JEE felt manageable.",
       },
       {
         name: "Shruti Nair",

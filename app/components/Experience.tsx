@@ -39,7 +39,7 @@ const Experience: React.FC = () => {
           <div className="w-14 h-1 bg-primary rounded-full mb-6" />
 
           <p className="text-slate-300 text-base leading-relaxed mb-8 max-w-lg">
-            At BrightMind Academy, we believe every student has the potential to
+            At Aryabhatta Educations, we believe every student has the potential to
             excel. Our structured approach combines expert teaching, regular
             assessments, and personalized attention to transform students into
             confident achievers.

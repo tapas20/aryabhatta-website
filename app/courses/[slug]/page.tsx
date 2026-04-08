@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${course.title} - BrightMind Academy`,
+    title: `${course.title} - Aryabhatta Educations`,
     description: course.fullDescription,
     keywords: [
       course.title,
@@ -44,7 +44,7 @@ export async function generateMetadata({
       ...course.subjects,
       "coaching",
       "education",
-      "BrightMind Academy",
+      "Aryabhatta Educations",
     ],
   };
 }

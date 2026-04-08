@@ -108,7 +108,7 @@ export default function ContactPage() {
           <ContactCard
             icon={<Mail size={28} className="text-primary" />}
             title="Email"
-            value="info@brightmindacademy.in"
+            value="info@aryabhattaeducations.in"
             text="Write to us anytime"
           />
           <ContactCard
@@ -155,7 +155,7 @@ export default function ContactPage() {
 
             <p className="text-slate-300 text-lg max-w-lg">
               Interested in enrolling your child? Fill out the form to book a
-              free demo class and experience the BrightMind difference.
+              free demo class and experience the Aryabhatta Educations difference.
             </p>
 
             <div className="space-y-5">
@@ -177,7 +177,7 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-3">
                 <Mail size={22} className="text-primary shrink-0" />
-                <p className="text-slate-400">info@brightmindacademy.in</p>
+                <p className="text-slate-400">info@aryabhattaeducations.in</p>
               </div>
             </div>
 
@@ -276,7 +276,7 @@ export default function ContactPage() {
               <input
                 type="hidden"
                 name="from_name"
-                value="BrightMind Academy Website"
+                value="Aryabhatta Educations Website"
               />
 
               <motion.button
@@ -325,7 +325,7 @@ export default function ContactPage() {
           className="w-full h-full border-0"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="BrightMind Academy Location"
+          title="Aryabhatta Educations Location"
         />
       </motion.div>
     </div>

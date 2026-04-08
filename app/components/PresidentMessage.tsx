@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const DIRECTOR_NAME = "The Director";
-const DIRECTOR_ROLE = "Founder & Director, BrightMind Academy";
+const DIRECTOR_ROLE = "Founder & Director, Aryabhatta Educations";
 
 const focusAreas = [
   {
@@ -50,10 +50,10 @@ const focusAreas = [
 
 const PresidentMessage = () => {
   const paragraphs = [
-    `BrightMind Academy was founded with a simple yet powerful vision: to make quality education accessible to every student, regardless of their starting point. We believe that with the right guidance, proper methodology, and genuine care, every student has the potential to excel.`,
+    `Aryabhatta Educations was founded with a simple yet powerful vision: to make quality education accessible to every student, regardless of their starting point. We believe that with the right guidance, proper methodology, and genuine care, every student has the potential to excel.`,
     `Over the past decade, we have grown from a small tuition center to one of the most trusted coaching institutes in the region. Our approach combines conceptual learning with regular practice, ensuring students not only score well in exams but truly understand the subjects they study.`,
-    `Our faculty members are the backbone of BrightMind Academy. Each teacher brings years of experience and a passion for teaching that goes beyond the textbook. We invest in continuous training and updated curriculum to ensure our students always receive the best education possible.`,
-    `Looking ahead, we remain committed to our core values of academic excellence, personalized attention, and holistic student development. Whether preparing for CBSE or CHSE board exams, or laying the foundation for competitive entrance exams like JEE and NEET, BrightMind Academy is here to guide every student towards success.`,
+    `Our faculty members are the backbone of Aryabhatta Educations. Each teacher brings years of experience and a passion for teaching that goes beyond the textbook. We invest in continuous training and updated curriculum to ensure our students always receive the best education possible.`,
+    `Looking ahead, we remain committed to our core values of academic excellence, personalized attention, and holistic student development. Whether preparing for CBSE or CHSE board exams, or laying the foundation for competitive entrance exams like JEE and NEET, Aryabhatta Educations is here to guide every student towards success.`,
   ];
 
   return (
@@ -81,7 +81,7 @@ const PresidentMessage = () => {
           className="text-center mb-10 sm:mb-14 md:mb-20"
         >
           <p className="text-xs sm:text-sm tracking-[0.2em] uppercase text-muted-foreground">
-            BrightMind Academy
+            Aryabhatta Educations
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-light text-foreground">
             Director&apos;s{" "}

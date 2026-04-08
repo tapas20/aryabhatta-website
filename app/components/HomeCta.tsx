@@ -20,7 +20,7 @@ const HomeCta = () => {
 
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
           Join thousands of successful students. Book a free demo class and
-          experience the BrightMind difference today.
+          experience the Aryabhatta Educations difference today.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full">

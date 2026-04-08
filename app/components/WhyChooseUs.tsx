@@ -44,7 +44,7 @@ const features = [
   },
   {
     title: "Doubt Clearing Sessions",
-    desc: "Dedicated one-on-one doubt clearing sessions after every chapter. No question goes unanswered at BrightMind Academy.",
+    desc: "Dedicated one-on-one doubt clearing sessions after every chapter. No question goes unanswered at Aryabhatta Educations.",
     icon: <HeadphonesIcon className="w-8 h-8" />,
     gradient: "from-cyan-600 to-blue-500",
   },
@@ -65,13 +65,13 @@ export default function WhyChooseUs() {
             <div className="inline-flex items-center gap-3 mb-4">
               <span className="h-[2px] w-10 bg-primary rounded-full"></span>
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary">
-                Why BrightMind
+                Why Aryabhatta Educations
               </p>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05]">
               Why Choose
               <br />
-              <span className="text-primary">BrightMind Academy?</span>
+              <span className="text-primary">Aryabhatta Educations?</span>
             </h2>
           </motion.div>
 

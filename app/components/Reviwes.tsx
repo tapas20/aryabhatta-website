@@ -8,7 +8,7 @@ export const testimonials = [
   {
     name: "Priya Mohanty",
     role: "Class 12 CBSE — 96.4%",
-    text: "BrightMind Academy transformed my approach to studies. The faculty made Physics and Chemistry so easy to understand. I scored 96.4% in boards and got into my dream college!",
+    text: "Aryabhatta Educations transformed my approach to studies. The faculty made Physics and Chemistry so easy to understand. I scored 96.4% in boards and got into my dream college!",
     rating: 5,
   },
   {
@@ -20,13 +20,13 @@ export const testimonials = [
   {
     name: "Sneha Patel",
     role: "Class 12 CHSE Science — 92%",
-    text: "I joined BrightMind in Class 11 and it was the best decision. The study material and practice papers were excellent. Scored 92% in CHSE boards!",
+    text: "I joined Aryabhatta Educations in Class 11 and it was the best decision. The study material and practice papers were excellent. Scored 92% in CHSE boards!",
     rating: 5,
   },
   {
     name: "Rahul Sharma",
     role: "Parent of Class 9 Student",
-    text: "My son's performance improved dramatically after joining BrightMind. The regular parent-teacher meetings keep us informed about his progress. Highly recommended!",
+    text: "My son's performance improved dramatically after joining Aryabhatta Educations. The regular parent-teacher meetings keep us informed about his progress. Highly recommended!",
     rating: 5,
   },
   {
@@ -38,13 +38,13 @@ export const testimonials = [
   {
     name: "Vikram Nayak",
     role: "JEE Main Qualified",
-    text: "BrightMind's integrated JEE coaching along with board preparation helped me crack JEE Main while scoring 93% in boards. The problem-solving approach is top-notch.",
+    text: "Aryabhatta Educations' integrated JEE coaching along with board preparation helped me crack JEE Main while scoring 93% in boards. The problem-solving approach is top-notch.",
     rating: 5,
   },
   {
     name: "Deepa Rout",
     role: "Parent of Class 12 Student",
-    text: "Both my children studied at BrightMind. The faculty's dedication and the structured learning approach consistently deliver excellent results. Worth every penny!",
+    text: "Both my children studied at Aryabhatta Educations. The faculty's dedication and the structured learning approach consistently deliver excellent results. Worth every penny!",
     rating: 5,
   },
   {
@@ -56,13 +56,13 @@ export const testimonials = [
   {
     name: "Kavya Tripathy",
     role: "NEET Qualified",
-    text: "The Biology faculty at BrightMind is exceptional. Their NEET-integrated approach helped me qualify for NEET while also scoring 95% in my CBSE boards.",
+    text: "The Biology faculty at Aryabhatta Educations is exceptional. Their NEET-integrated approach helped me qualify for NEET while also scoring 95% in my CBSE boards.",
     rating: 5,
   },
   {
     name: "Rajan Mohanty",
     role: "Parent of Class 8 Student",
-    text: "My daughter used to struggle with Maths. After just 3 months at BrightMind, she's now topping her class. The personalized attention makes all the difference.",
+    text: "My daughter used to struggle with Maths. After just 3 months at Aryabhatta Educations, she's now topping her class. The personalized attention makes all the difference.",
     rating: 5,
   },
 ];

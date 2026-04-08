@@ -2,12 +2,12 @@ export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: "BrightMind Academy",
-    alternateName: ["BrightMind Coaching Center", "BrightMind Academy Coaching"],
-    url: "https://www.brightmindacademy.in",
-    logo: "https://www.brightmindacademy.in/assets/logo.png",
+    name: "Aryabhatta Educations",
+    alternateName: ["Aryabhatta Educations Coaching Center", "Aryabhatta Educations Coaching"],
+    url: "https://www.aryabhattaeducations.in",
+    logo: "https://www.aryabhattaeducations.in/assets/logo.png",
     description:
-      "BrightMind Academy is a premier coaching center for classes 6 to 12, providing expert coaching for CBSE and CHSE boards with personalized learning and proven results.",
+      "Aryabhatta Educations is a premier coaching center for classes 6 to 12, providing expert coaching for CBSE and CHSE boards with personalized learning and proven results.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Education Lane, Near City Center",
@@ -25,11 +25,11 @@ export function OrganizationJsonLd() {
         availableLanguage: ["English", "Hindi", "Odia"],
       },
     ],
-    email: "info@brightmindacademy.in",
+    email: "info@aryabhattaeducations.in",
     sameAs: [
-      "https://www.instagram.com/brightmindacademy",
-      "https://www.facebook.com/brightmindacademy",
-      "https://www.youtube.com/@brightmindacademy",
+      "https://www.instagram.com/aryabhattaeducations",
+      "https://www.facebook.com/aryabhattaeducations",
+      "https://www.youtube.com/@aryabhattaeducations",
     ],
     knowsAbout: [
       "CBSE Board Coaching",
@@ -54,11 +54,11 @@ export function LocalBusinessJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: "BrightMind Academy",
-    image: "https://www.brightmindacademy.in/assets/logo.png",
-    url: "https://www.brightmindacademy.in",
+    name: "Aryabhatta Educations",
+    image: "https://www.aryabhattaeducations.in/assets/logo.png",
+    url: "https://www.aryabhattaeducations.in",
     telephone: "+91-98765-43210",
-    email: "info@brightmindacademy.in",
+    email: "info@aryabhattaeducations.in",
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Education Lane, Near City Center",
@@ -139,14 +139,14 @@ export function WebSiteJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "BrightMind Academy",
-    alternateName: "BrightMind Coaching",
-    url: "https://www.brightmindacademy.in",
+    name: "Aryabhatta Educations",
+    alternateName: "Aryabhatta Educations Coaching",
+    url: "https://www.aryabhattaeducations.in",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://www.brightmindacademy.in/?q={search_term_string}",
+        urlTemplate: "https://www.aryabhattaeducations.in/?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },

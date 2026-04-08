@@ -1,14 +1,35 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import type { LucideIcon } from "lucide-react";
 import {
   Menu,
   X,
   ChevronDown,
+  ChevronRight,
   GraduationCap,
   ArrowUpRight,
+  BookOpen,
+  Target,
+  Atom,
+  TrendingUp,
+  FlaskConical,
+  Palette,
+  Rocket,
+  HelpCircle,
 } from "lucide-react";
 import { coursesData } from "@/lib/courses";
+
+const iconMap: Record<string, LucideIcon> = {
+  BookOpen,
+  Target,
+  Atom,
+  TrendingUp,
+  FlaskConical,
+  Palette,
+  Rocket,
+  HelpCircle,
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +37,7 @@ const Navbar = () => {
 
   const [coursesOpen, setCoursesOpen] = useState(false);
   const [coursesMobileOpen, setCoursesMobileOpen] = useState(false);
+  const [hoveredCourse, setHoveredCourse] = useState<number | null>(null);
   const coursesRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -45,9 +67,11 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!open) setCoursesMobileOpen(false);
-  }, [open]);
+  const toggleMobileMenu = () => {
+    const next = !open;
+    setOpen(next);
+    if (!next) setCoursesMobileOpen(false);
+  };
 
   const hoverStyle =
     "hover:text-primary underline-offset-4 transition-all duration-200 cursor-pointer";
@@ -58,7 +82,11 @@ const Navbar = () => {
     title: course.title,
     desc: course.shortDescription,
     href: `/courses/${course.slug}`,
-    icon: course.classLevel,
+    classLevel: course.classLevel,
+    board: course.board,
+    gradient: course.gradient,
+    icon: course.icon,
+    subjects: course.subjects,
   }));
 
   return (
@@ -66,7 +94,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-card/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+          : "bg-card"
       }`}
     >
       <nav
@@ -79,7 +107,7 @@ const Navbar = () => {
               <GraduationCap className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold tracking-tight text-foreground">
-              BrightMind
+              Aryabhatta
             </span>
           </Link>
         </div>
@@ -109,11 +137,11 @@ const Navbar = () => {
               />
             </button>
 
-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-full h-[40px] bg-transparent" />
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-full h-[20px] bg-transparent" />
 
-            {/* Mega Menu Dropdown */}
+            {/* Full-width Mega Menu */}
             <div
-              className={`fixed top-[72px] left-0 w-full border-t shadow-2xl overflow-hidden transition-all duration-300 origin-top ${
+              className={`fixed top-[60px] left-0 w-full border-t shadow-2xl overflow-hidden transition-all duration-300 origin-top ${
                 coursesOpen
                   ? "opacity-100 visible translate-y-0"
                   : "opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
@@ -121,82 +149,96 @@ const Navbar = () => {
               role="menu"
             >
               <div className="max-w-[1400px] mx-auto flex w-full">
-                {/* Left Side: Featured */}
-                <div className="w-1/3 bg-gradient-to-br from-primary/5 to-accent/5 p-6 lg:p-8 border-r border-border flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="h-[2px] w-8 bg-primary rounded-full"></span>
-                    <span className="text-xs font-bold tracking-[0.25em] text-primary uppercase">
-                      Featured Program
-                    </span>
-                  </div>
-
-                  <div className="relative h-40 lg:h-48 w-full rounded-2xl overflow-hidden mb-4 shadow-md bg-gradient-to-br from-primary to-teal-800 flex items-center justify-center">
-                    <div className="text-center text-primary-foreground p-6">
-                      <GraduationCap className="w-12 h-12 mx-auto mb-3 opacity-90" />
-                      <p className="text-2xl font-bold">CBSE & CHSE</p>
-                      <p className="text-sm opacity-80 mt-1">Classes 6 to 12</p>
+                {/* Left Panel - Featured */}
+                <div className="w-[300px] shrink-0 p-8 border-r border-border flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-1 h-5 bg-primary rounded-full" />
+                      <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">
+                        Our Programs
+                      </span>
                     </div>
+
+                    <h3 className="text-2xl font-extrabold text-foreground leading-tight mt-4">
+                      CBSE & CHSE
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Classes 6 to 12
+                    </p>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-4">
+                      Credentials backed by expert faculty — aligned with board
+                      exam success and competitive readiness.
+                    </p>
                   </div>
-
-                  <h4 className="text-2xl lg:text-3xl font-extrabold text-foreground mb-3 tracking-tight leading-tight">
-                    Board Exam <br /> Preparation
-                  </h4>
-
-                  <p className="text-muted-foreground font-medium leading-relaxed text-sm max-w-[95%]">
-                    Comprehensive coaching with expert faculty, regular tests,
-                    and personalized attention for guaranteed results.
-                  </p>
 
                   <Link
                     href="/courses"
                     onClick={() => setCoursesOpen(false)}
-                    className="inline-flex items-center gap-2 text-primary font-bold text-sm mt-4 transition-colors hover:text-teal-800 tracking-wide"
+                    className="inline-flex items-center gap-2 text-primary font-semibold text-sm mt-6 hover:text-teal-800 transition-colors"
                   >
                     View All Courses
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-transform duration-500 hover:translate-x-2"
-                    >
-                      <path
-                        d="M5 12H19M19 12L12 5M19 12L12 19"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
 
-                {/* Right Side: Course Links Grid */}
-                <div className="w-2/3 p-8 lg:p-10 grid grid-cols-2 gap-x-10 gap-y-5">
-                  {courseItems.map((item) => (
+                {/* Right Panel - Course Grid */}
+                <div className="flex-1 p-6">
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {courseItems.map((item, idx) => {
+                      const IconComp = iconMap[item.icon] || BookOpen;
+                      return (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          className={`group/link flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200 cursor-pointer ${
+                            hoveredCourse === idx
+                              ? "bg-primary/[0.07]"
+                              : "hover:bg-primary/[0.04]"
+                          }`}
+                          onClick={() => setCoursesOpen(false)}
+                          onMouseEnter={() => setHoveredCourse(idx)}
+                          onMouseLeave={() => setHoveredCourse(null)}
+                          role="menuitem"
+                        >
+                          <div
+                            className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0 shadow-sm transition-transform duration-200 group-hover/link:scale-110`}
+                          >
+                            <IconComp className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h5 className="text-sm font-semibold text-foreground group-hover/link:text-primary transition-colors truncate">
+                              {item.title}
+                            </h5>
+                            <p className="text-[11px] text-muted-foreground mt-0.5 truncate">
+                              {item.board} &middot; Class {item.classLevel}
+                            </p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-muted-foreground/30 group-hover/link:text-primary shrink-0 transition-all duration-200 group-hover/link:translate-x-0.5" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom CTA Bar */}
+                  <div className="mt-4 rounded-xl bg-gradient-to-r from-primary/[0.06] to-accent/[0.06] px-5 py-3.5 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+                        <GraduationCap className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-foreground">Not sure which course?</p>
+                        <p className="text-[11px] text-muted-foreground">Get a free counselling session</p>
+                      </div>
+                    </div>
                     <Link
-                      key={item.title}
-                      href={item.href}
-                      className="group/link flex items-start gap-4 p-3 rounded-xl transition-colors cursor-pointer hover:bg-primary/5"
+                      href="/contact"
                       onClick={() => setCoursesOpen(false)}
-                      role="menuitem"
+                      className="px-5 py-2 rounded-full bg-primary text-white text-xs font-semibold hover:bg-teal-800 transition-colors shadow-sm"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center shrink-0 group-hover/link:bg-primary group-hover/link:border-primary transition-colors shadow-sm">
-                        <span className="text-xs font-extrabold text-primary group-hover/link:text-primary-foreground transition-colors">
-                          {item.icon}
-                        </span>
-                      </div>
-                      <div className="flex-1 mt-0.5">
-                        <h5 className="text-sm font-bold text-foreground group-hover/link:text-primary transition-colors">
-                          {item.title}
-                        </h5>
-                        <p className="text-xs text-muted-foreground font-medium mt-1 leading-snug">
-                          {item.desc}
-                        </p>
-                      </div>
+                      Book Free Demo
                     </Link>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -225,7 +267,7 @@ const Navbar = () => {
           </Link>
 
           {/* Mobile icon */}
-          <button className="md:hidden ml-2" onClick={() => setOpen(!open)}>
+          <button className="md:hidden ml-2" onClick={toggleMobileMenu}>
             {open ? (
               <X className="w-7 h-7 transition text-foreground" />
             ) : (
@@ -281,23 +323,39 @@ const Navbar = () => {
 
                 {coursesMobileOpen && (
                   <div className="mt-3 rounded-xl border p-2 flex flex-col gap-1 overflow-hidden bg-card/70 border-border">
-                    {courseItems.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="group flex items-center gap-3 p-2.5 rounded-lg hover:bg-primary/10 transition-colors text-left"
-                      >
-                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                          <span className="text-[10px] font-extrabold text-primary">
-                            {item.icon}
-                          </span>
-                        </div>
-                        <span className="text-sm font-semibold group-hover:text-primary transition-colors">
-                          {item.title}
-                        </span>
-                      </Link>
-                    ))}
+                    {courseItems.map((item) => {
+                      const IconComp = iconMap[item.icon] || BookOpen;
+                      return (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className="group flex items-center gap-3 p-2.5 rounded-lg hover:bg-primary/10 transition-colors text-left"
+                        >
+                          <div
+                            className={`w-9 h-9 rounded-lg bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0`}
+                          >
+                            <IconComp className="w-4 h-4 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <span className="text-sm font-semibold group-hover:text-primary transition-colors block truncate">
+                              {item.title}
+                            </span>
+                            <span className="text-[11px] text-muted-foreground">
+                              {item.board} &middot; Class {item.classLevel}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                    <Link
+                      href="/courses"
+                      onClick={() => setOpen(false)}
+                      className="flex items-center justify-center gap-2 p-2.5 rounded-lg bg-primary/5 text-primary text-sm font-semibold mt-1"
+                    >
+                      View All Courses
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 )}
               </li>

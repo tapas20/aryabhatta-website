@@ -12,24 +12,24 @@ import Award from "./components/Award";
 
 export const metadata: Metadata = {
   title:
-    "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+    "Aryabhatta Educations | Best CBSE & CHSE Coaching for Classes 6-12",
   description:
-    "BrightMind Academy is a premier coaching center for classes 6-12. Expert faculty, proven results, personalized learning for CBSE & CHSE boards. JEE & NEET foundation coaching available. Enroll today!",
+    "Aryabhatta Educations is a premier coaching center for classes 6-12. Expert faculty, proven results, personalized learning for CBSE & CHSE boards. JEE & NEET foundation coaching available. Enroll today!",
   alternates: {
-    canonical: "https://www.brightmindacademy.in",
+    canonical: "https://www.aryabhattaeducations.in",
   },
   openGraph: {
     title:
-      "BrightMind Academy | Best CBSE & CHSE Coaching for Classes 6-12",
+      "Aryabhatta Educations | Best CBSE & CHSE Coaching for Classes 6-12",
     description:
       "Premier coaching center with expert faculty, 95%+ distinction rate, and personalized attention for CBSE & CHSE students.",
-    url: "https://www.brightmindacademy.in",
+    url: "https://www.aryabhattaeducations.in",
     images: [
       {
         url: "/assets/logo.png",
         width: 1200,
         height: 630,
-        alt: "BrightMind Academy - Best Coaching Center",
+        alt: "Aryabhatta Educations - Best Coaching Center",
       },
     ],
   },

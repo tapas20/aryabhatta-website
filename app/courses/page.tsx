@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Courses & Programs",
   description:
-    "Explore our comprehensive coaching programs for CBSE & CHSE classes 6-12. Science, Commerce, Arts streams, JEE & NEET foundation coaching available at BrightMind Academy.",
+    "Explore our comprehensive coaching programs for CBSE & CHSE classes 6-12. Science, Commerce, Arts streams, JEE & NEET foundation coaching available at Aryabhatta Educations.",
 };
 
 const iconMap: Record<string, LucideIcon> = {
@@ -216,7 +216,7 @@ export default function CoursesPage() {
             <div className="inline-flex items-center gap-3 mb-4">
               <span className="h-[2px] w-10 bg-primary rounded-full"></span>
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-primary">
-                Why BrightMind
+                Why Aryabhatta
               </p>
               <span className="h-[2px] w-10 bg-primary rounded-full"></span>
             </div>
@@ -281,7 +281,7 @@ export default function CoursesPage() {
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Join thousands of successful students who have achieved their
-            academic goals with BrightMind Academy. Enroll today and take the
+            academic goals with Aryabhatta Educations. Enroll today and take the
             first step towards excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

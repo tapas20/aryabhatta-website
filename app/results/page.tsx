@@ -4,7 +4,7 @@ import HomeCta from "../components/HomeCta";
 export const metadata: Metadata = {
   title: "Results",
   description:
-    "View the outstanding results of BrightMind Academy students in CBSE & CHSE board exams. 95%+ distinction rate with consistent top rankers every year.",
+    "View the outstanding results of Aryabhatta Educations students in CBSE & CHSE board exams. 95%+ distinction rate with consistent top rankers every year.",
 };
 
 const toppers = [

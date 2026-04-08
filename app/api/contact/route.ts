@@ -91,7 +91,7 @@ export async function POST(req: Request) {
     const htmlBody = `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 20px;">
         <div style="background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 24px; border-radius: 12px 12px 0 0;">
-          <h2 style="color: #ffffff; margin: 0; font-size: 22px;">New Enquiry — BrightMind Academy</h2>
+          <h2 style="color: #ffffff; margin: 0; font-size: 22px;">New Enquiry — Aryabhatta Educations</h2>
         </div>
 
         <div style="border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px; padding: 24px;">
@@ -110,14 +110,14 @@ export async function POST(req: Request) {
           ` : ""}
 
           <div style="text-align: center; margin-top: 24px; color: #9ca3af; font-size: 12px;">
-            This is an automated message from the BrightMind Academy website.
+            This is an automated message from the Aryabhatta Educations website.
           </div>
         </div>
       </div>
     `;
 
     await transporter.sendMail({
-      from: `"BrightMind Academy" <${smtp.from}>`,
+      from: `"Aryabhatta Educations" <${smtp.from}>`,
       replyTo: email,
       to: smtp.recipient,
       subject: `New Enquiry from ${name}${studentClass ? ` — Class ${studentClass}` : ""}`,
@@ -137,13 +137,13 @@ export async function POST(req: Request) {
     const autoReplyHtml = `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 20px;">
         <div style="background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 24px; border-radius: 12px 12px 0 0; text-align: center;">
-          <h2 style="color: #ffffff; margin: 0; font-size: 22px;">BrightMind Academy</h2>
+          <h2 style="color: #ffffff; margin: 0; font-size: 22px;">Aryabhatta Educations</h2>
           <p style="color: rgba(255,255,255,0.8); margin: 4px 0 0; font-size: 13px;">Shaping Future Toppers</p>
         </div>
 
         <div style="border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px; padding: 24px;">
           <p style="font-size: 15px; color: #374151;">Dear ${escapeHtml(name)},</p>
-          <p style="font-size: 15px; color: #374151;">Thank you for your interest in BrightMind Academy! We have received your enquiry and our admissions team will get back to you within 24 hours.</p>
+          <p style="font-size: 15px; color: #374151;">Thank you for your interest in Aryabhatta Educations! We have received your enquiry and our admissions team will get back to you within 24 hours.</p>
 
           ${message ? `
           <p style="font-size: 14px; color: #6b7280;">Your message:</p>
@@ -152,17 +152,17 @@ export async function POST(req: Request) {
           </blockquote>
           ` : ""}
 
-          <p style="font-size: 15px; color: #374151; margin-top: 20px;">Warm Regards,<br/><strong style="color: #4F46E5;">BrightMind Academy</strong><br/>
+          <p style="font-size: 15px; color: #374151; margin-top: 20px;">Warm Regards,<br/><strong style="color: #4F46E5;">Aryabhatta Educations</strong><br/>
           <span style="font-size: 13px; color: #6b7280;">123 Education Lane, Bhubaneswar, Odisha<br/>Phone: +91 98765 43210</span></p>
         </div>
       </div>
     `;
 
     await transporter.sendMail({
-      from: `"BrightMind Academy" <${smtp.from}>`,
+      from: `"Aryabhatta Educations" <${smtp.from}>`,
       to: email,
-      subject: `Thank you for your enquiry — BrightMind Academy`,
-      text: `Dear ${name},\n\nThank you for your interest in BrightMind Academy! We have received your enquiry and our admissions team will get back to you within 24 hours.\n\nWarm Regards,\nBrightMind Academy\n+91 98765 43210`,
+      subject: `Thank you for your enquiry — Aryabhatta Educations`,
+      text: `Dear ${name},\n\nThank you for your interest in Aryabhatta Educations! We have received your enquiry and our admissions team will get back to you within 24 hours.\n\nWarm Regards,\nAryabhatta Educations\n+91 98765 43210`,
       html: autoReplyHtml,
     });
 

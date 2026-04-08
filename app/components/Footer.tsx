@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-lg font-extrabold tracking-tight leading-none">
-                  BrightMind
+                  Aryabhatta
                 </p>
                 <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/50 leading-none">
                   Academy
@@ -160,10 +160,10 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="mailto:info@brightmindacademy.in"
+                  href="mailto:info@aryabhattaeducations.in"
                   className="text-slate-400 hover:text-teal-400 transition-colors text-sm"
                 >
-                  info@brightmindacademy.in
+                  info@aryabhattaeducations.in
                 </a>
               </li>
             </ul>
@@ -173,7 +173,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} BrightMind Academy. All rights
+            &copy; {new Date().getFullYear()} Aryabhatta Educations. All rights
             reserved.
           </p>
           <p className="text-xs text-slate-600">
