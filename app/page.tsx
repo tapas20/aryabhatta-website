@@ -10,6 +10,7 @@ import HomeCta from "./components/HomeCta";
 import Businesshours from "./components/Businesshours";
 import Award from "./components/Award";
 
+
 export const metadata: Metadata = {
   title:
     "Aryabhatta Educations | Best CBSE & CHSE Coaching for Classes 6-12",
